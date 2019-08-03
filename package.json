@@ -1,0 +1,34 @@
+{
+  "name": "pink tiger burger builder",
+  "version": "0.0.1",
+  "description": "Panda Bila Crekva online burger shop",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/igavelyuk/pink_tiger_burger_builder.git"
+  },
+  "keywords": [
+    "bootstrap"
+  ],
+  "author": "Igor Gavelyuk",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/igavelyuk/pink_tiger_burger_builder.git/issues"
+  },
+  "homepage": "https://github.com/igavelyuk/pink_tiger_burger_builder.git#readme",
+  "dependencies": {
+    "browser-sync": "^2.26.7",
+    "g": "^2.0.1",
+    "gulp-cssmin": "^0.2.0",
+    "gulp-html-minify": "0.0.14",
+    "gulp-image": "^4.3.0",
+    "gulp-minify": "^3.1.0",
+    "gulp-sass": "^4.0.2"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
+}
