@@ -24,7 +24,6 @@ $npm install
 #/node_modules
 #package-lock.json
 #/dist  <- minified files
-#.gitignore
 # this kind of files not upload to github
 /src
  index.html
@@ -37,6 +36,7 @@ $npm install
       productdb.json
       jsonReadme.md <-some explanations
     /img  <-images
+.gitignore
 gulpfile.js
 package.json
 README.md
