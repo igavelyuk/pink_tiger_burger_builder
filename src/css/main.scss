@@ -11,11 +11,12 @@ $m1-color:#ad6336;
 $m2-color:#81583b;
 $ketchup:#f50020;
 *{
-  outline: 1px solid red;
+  // outline: 1px solid red;
   font-family: "Confortaa Bold";
 }
 .navbg-panda-color{
   background-color: $l-green-color;
+  // background:url("/img/cross-pattern.png") repeat;
   a{
     color: #fff;
     font-size: 1em;
@@ -26,8 +27,23 @@ $ketchup:#f50020;
   height: 150px;
   width: 150px;
   background-color: $l-green-color;
+  // background:url("/img/cross-pattern.png") repeat;
   padding: 5px;
   border-bottom-right-radius: 50%;
+}
+.nav-tel-size{
+  font-size: 0.7em!important;
+  font-family: monospace;
+}
+.fancy-bg{
+  margin-left: 50px;
+  padding: 0px;
+  // background: linear-gradient(90deg, rgba(255,255,255,1), rgba(0,255,0,0.1));
+  background: url("/img/cross-pattern.png") repeat;
+}
+.white-bg{
+  position: inherit;
+  background-color: rgba(255,255,255,0.4);
 }
 .rounded-border-image{
   float:left;
@@ -38,27 +54,54 @@ $ketchup:#f50020;
   margin: 0px 20px 0px -10px;
   border-radius: 50%;
 }
+.rounded-border-image-blue{
+  float:left;
+  height: 170px;
+  width: 170px;
+  background-color: blue;
+  padding:5px;
+  margin: 0px 20px 0px -10px;
+  border-radius: 50%;
+}
+.rounded-border-image-orange{
+  float:left;
+  height: 170px;
+  width: 170px;
+  background-color: orange;
+  padding:5px;
+  margin: 0px 20px 0px -10px;
+  border-radius: 50%;
+}
 .color-black{
   color: #000;
 }
 .top-space{
-  float: left;
+  // float: left;
   margin-top: 0px;
 }
 .jumbotron{
   /* The image used */
-  background-image: url("../img/piqsels.com-id-jfsak.jpg");
-
-  /* Full height */
   height: 100%;
   text-shadow: 1px 1px 3px black;
-
-  /* Center and scale the image nicely */
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
+.jumbo-bg1{
+  background-image: url("../img/piqsels.com-id-jfsak.jpg");
+}
+.jumbo-bg2{
+  background-image: url("../img/pepsi-jumbo.jpg");
+}
+.jumbo-bg3{
+  background-image: url("../img/additions-jumbo.jpg");
+}
 .item{
+  margin-bottom: 1em;
+  background-color:#fafffa;
+  .input-group{
+    padding-bottom: 1em;
+  }
   p{
     font-size: 12px!important;
   }

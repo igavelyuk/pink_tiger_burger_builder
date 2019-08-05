@@ -1,5 +1,4 @@
 * {
-  outline: 1px solid red;
   font-family: "Confortaa Bold"; }
 
 .navbg-panda-color {
@@ -16,6 +15,19 @@
   padding: 5px;
   border-bottom-right-radius: 50%; }
 
+.nav-tel-size {
+  font-size: 0.7em !important;
+  font-family: monospace; }
+
+.fancy-bg {
+  margin-left: 50px;
+  padding: 0px;
+  background: url("/img/cross-pattern.png") repeat; }
+
+.white-bg {
+  position: inherit;
+  background-color: rgba(255, 255, 255, 0.4); }
+
 .rounded-border-image {
   float: left;
   height: 170px;
@@ -25,23 +37,51 @@
   margin: 0px 20px 0px -10px;
   border-radius: 50%; }
 
+.rounded-border-image-blue {
+  float: left;
+  height: 170px;
+  width: 170px;
+  background-color: blue;
+  padding: 5px;
+  margin: 0px 20px 0px -10px;
+  border-radius: 50%; }
+
+.rounded-border-image-orange {
+  float: left;
+  height: 170px;
+  width: 170px;
+  background-color: orange;
+  padding: 5px;
+  margin: 0px 20px 0px -10px;
+  border-radius: 50%; }
+
 .color-black {
   color: #000; }
 
 .top-space {
-  float: left;
   margin-top: 0px; }
 
 .jumbotron {
   /* The image used */
-  background-image: url("../img/piqsels.com-id-jfsak.jpg");
-  /* Full height */
   height: 100%;
   text-shadow: 1px 1px 3px black;
-  /* Center and scale the image nicely */
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover; }
 
-.item p {
-  font-size: 12px !important; }
+.jumbo-bg1 {
+  background-image: url("../img/piqsels.com-id-jfsak.jpg"); }
+
+.jumbo-bg2 {
+  background-image: url("../img/pepsi-jumbo.jpg"); }
+
+.jumbo-bg3 {
+  background-image: url("../img/additions-jumbo.jpg"); }
+
+.item {
+  margin-bottom: 1em;
+  background-color: #fafffa; }
+  .item .input-group {
+    padding-bottom: 1em; }
+  .item p {
+    font-size: 12px !important; }
