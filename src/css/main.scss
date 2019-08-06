@@ -10,12 +10,14 @@ $cheese2-color:#c69d4e;
 $m1-color:#ad6336;
 $m2-color:#81583b;
 $ketchup:#f50020;
+
 *{
-  // outline: 1px solid red;
+  outline: 1px solid red;
   font-family: "Confortaa Bold";
 }
 .navbg-panda-color{
   background-color: $l-green-color;
+  left:150px;
   // background:url("/img/cross-pattern.png") repeat;
   a{
     color: #fff;
@@ -23,6 +25,7 @@ $ketchup:#f50020;
   }
 }
 .nav-logo{
+  top:0px;
   float:left;
   height: 150px;
   width: 150px;
@@ -30,6 +33,7 @@ $ketchup:#f50020;
   // background:url("/img/cross-pattern.png") repeat;
   padding: 5px;
   border-bottom-right-radius: 50%;
+  z-order:99;
 }
 .nav-tel-size{
   font-size: 0.7em!important;
@@ -105,4 +109,25 @@ $ketchup:#f50020;
   p{
     font-size: 12px!important;
   }
+}
+.anita-bar {
+  top:200px;
+  height:300px;
+  width: 200px;
+  z-index: 9;
+}
+.anita-close{
+  height: 50px;
+  width: 50px;
+  position: absolute;
+  border-radius: 50%;
+  float:right;
+  top: 0px;
+  left:150px;;
+  border: 2px solid yellow;
+  z-index: 10;
+}
+.footer{
+  text-align: center;
+  height: 5em
 }

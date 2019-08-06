@@ -1,19 +1,23 @@
 * {
+  outline: 1px solid red;
   font-family: "Confortaa Bold"; }
 
 .navbg-panda-color {
-  background-color: #61cd70; }
+  background-color: #61cd70;
+  left: 150px; }
   .navbg-panda-color a {
     color: #fff;
     font-size: 1em; }
 
 .nav-logo {
+  top: 0px;
   float: left;
   height: 150px;
   width: 150px;
   background-color: #61cd70;
   padding: 5px;
-  border-bottom-right-radius: 50%; }
+  border-bottom-right-radius: 50%;
+  z-order: 99; }
 
 .nav-tel-size {
   font-size: 0.7em !important;
@@ -85,3 +89,24 @@
     padding-bottom: 1em; }
   .item p {
     font-size: 12px !important; }
+
+.anita-bar {
+  top: 200px;
+  height: 300px;
+  width: 200px;
+  z-index: 9; }
+
+.anita-close {
+  height: 50px;
+  width: 50px;
+  position: absolute;
+  border-radius: 50%;
+  float: right;
+  top: 0px;
+  left: 150px;
+  border: 2px solid yellow;
+  z-index: 10; }
+
+.footer {
+  text-align: center;
+  height: 5em; }
