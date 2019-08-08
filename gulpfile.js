@@ -11,26 +11,29 @@
 // image minify: npm i --save-dev gulp-image
 // browser sync: npm i browser-sync --save-dev
 
-
 var gulp = require('gulp'),
   htmlminify = require("gulp-html-minify"),
   cssmin = require('gulp-cssmin'),
-  // rename = require('gulp-rename'),
   minify = require('gulp-minify'),
   browserSync = require('browser-sync'),
   sass = require('gulp-sass'),
   image = require('gulp-image');
-//command for minify html,css,js ---  gulp min
+
 gulp.task('min', function() {
+// Copy Comfortaa and webfonts after minify to dist folder
+  gulp.src('./src/css/Comfortaa/*')
+    .pipe(gulp.dest('./dist/css/Comfortaa/'));
+  gulp.src('./src/css/webfonts/*')
+    .pipe(gulp.dest('./dist/css/webfonts/'));
+// Finish Copy Comfortaa and webfonts after minify to dist folder
 
   gulp.src('./src/css/*.css')
     .pipe(cssmin())
-    // .pipe(rename({suffix: '.min'}))
     .pipe(gulp.dest('./dist/css/'));
-  gulp.src('./src/css/*.js')
+  gulp.src('./src/js/*.js')
     .pipe(minify({
       ext: {
-        src: '-debug.js',
+        //src: '-debug.js',
         min: '.js'
       },
       exclude: ['tasks'],
