@@ -20,42 +20,47 @@
 </head>
 
 <body>
+  <div class="alert alert-warning alert-dismissible first-plane stick-bottom">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <strong>Геолокация</strong> должна быть включена.
+  </div>
+
 <div class="anita-bar fixed-top">
-<iframe src ="https://getchat.me/pandabc.com.ua" height="400" width="200"></iframe>
-<button type="button" class="btn btn-success anita-close">X</button>
+<!-- <iframe src ="https://getchat.me/pandabc.com.ua" height="500" width="300"></iframe>  full HD-->
+<iframe src ="https://getchat.me/pandabc.com.ua" height="300" width="200"></iframe>
+<button type="button" class="btn btn-success anita-close"><i class="fas fa-times-circle"></i></button>
 </div>
 
 
   <header>
-    <section>
-      <div class="alert alert-warning alert-dismissible">
-        <button type="button" class="close" data-dismiss="alert">&times;</button>
-        <strong>Геолокация</strong> должна быть включена.
-      </div>
-    </section>
-
     <img class="nav-logo fixed-top" src="./img/logo.png" alt="burger-panda-bc" />
-    <nav class="navbar navbar-expand-lg navbg-panda-color fixed-top">
-      <a class="nav-tel-size" href="#" tabindex="-1" aria-disabled="true"><i class="fas fa-phone-square-alt"></i> Киев.(096)41-41-096</a>
-      <a class="nav-tel-size" href="#" tabindex="-1" aria-disabled="true"><i class="fas fa-phone-square-alt"></i> Лайф.(063)41-41-096</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <nav class="navbar navbar-expand-lg navbg-panda-color fixed-top text-right">
+      <div class="">
+        <p class="nav-tel-size text-right" href="#" tabindex="-1" aria-disabled="true"><i class="fas fa-phone-square-alt"></i> Киев.(096)4141096</p><br>
+        <p class="nav-tel-size text-right" href="#" tabindex="-1" aria-disabled="true"><i class="fas fa-phone-square-alt"></i> Лайф.(063)4141096</p>
+      </div>
+      <button class="navbar-toggler text-right" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <i class="fas fa-bars"></i>
       </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="collapse navbar-collapse text-center" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-          <a class="nav-item nav-link active" href="#"><i class="fas fa-hamburger color-black"></i> Главная <span class="sr-only">(current)</span></a>
-          <a class="nav-item nav-link" href="#"><i class="fab fa-hotjar color-black"></i> Акции</a>
-          <a class="nav-item nav-link" href="viber://add?number=380666540976"><i class="fab fa-viber color-black"></i> Перезвоним</a>
-          <a class="nav-item nav-link" href="tel:380666540976"><i class="fas fa-id-card-alt color-black"></i> Добавте нас</a>
+          <a class="nav-item nav-link active" href="#one"><i class="fas fa-hamburger color-black"></i>Бургеры<span class="sr-only">(current)</span></a>
+          <a class="nav-item nav-link" href="#two"><i class="fas fa-wine-bottle color-black"></i> Напитки </a>
+          <a class="nav-item nav-link" href="#three"><i class="fab fa-hotjar color-black"></i> Другое </a>
+          <a class="nav-item nav-link d-lg-none d-xl-none" href="viber://add?number=380666540976"><i class="fab fa-viber color-black"></i> Перезвоним</a>
+          <a class="nav-item nav-link d-lg-none d-xl-none" href="tel:380666540976"><i class="fas fa-id-card-alt color-black"></i> Добавте нас</a>
         </div>
       </div>
-      <div class="shopping">
-        <i class="fas fa-cart-arrow-down"></i> x 10 позиций
+      <div class="nav">
+        <div class="shopping">
+          <i class="fas fa-cart-arrow-down"></i> x 10 позиций <br>
+          <button class="btn btn-danger btn-rounded" type="submit"> Доставить </button>
+        </div>
       </div>
     </nav>
   </header>
 
-  <div class="jumbotron jumbo-bg1 text-white text-center">
+  <div id="one" class="jumbotron jumbo-bg1 text-white text-center">
     <h1>Сочный Горячий Бургер</h1>
   </div>
 
@@ -118,7 +123,7 @@
 
   </div>
 
-  <div class="jumbotron jumbo-bg2 text-white text-center">
+  <div id="two" class="jumbotron jumbo-bg2 text-white text-center">
     <h1>Освежающие Напитки</h1>
   </div>
   <div class="container top-space">
@@ -179,7 +184,7 @@
     </div>
   </div>
   <!-- container end -->
-  <div class="jumbotron jumbo-bg3 text-white text-center">
+  <div id="three" class="jumbotron jumbo-bg3 text-white text-center">
     <h1>Приятные Дополнения</h1>
   </div>
   <div class="container top-space">
@@ -267,10 +272,10 @@
 
   <script src="./js/jquery-3.4.1.min.js" crossorigin="anonymous" type="application/javascript"></script>
   <script src="./js/popper.min.js" crossorigin="anonymous" type="application/javascript"></script>
-  <!-- <script src="/./js/tooltip.min.js" crossorigin="anonymous" type="application/javascript"></script> -->
+  <!-- <script src="./js/tooltip.min.js" crossorigin="anonymous" type="application/javascript"></script> -->
   <script src="./js/bootstrap.bundle.min.js" crossorigin="anonymous" type="application/javascript"></script>
   <script src="./js/bootstrap.min.js" crossorigin="anonymous" type="application/javascript"></script>
-  <script src="./js/script.min.js" crossorigin="anonymous" type="application/javascript"></script>
+  <script src="./js/script.js" crossorigin="anonymous" type="application/javascript"></script>
 </body>
 
 </html>

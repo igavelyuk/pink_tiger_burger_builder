@@ -1,6 +1,6 @@
 $(function () {
   $('[data-toggle="popover"]').popover()
-})
+});
 //
 // const resPath = "/json/productdb.json";
 // function getData(callback) {
