@@ -12,7 +12,7 @@ $m2-color:#81583b;
 $ketchup:#f50020;
 
 *{
-  outline: 1px solid red;
+  // outline: 1px solid red;
   font-family: "Confortaa Bold";
 }
 .first-plane{
@@ -119,13 +119,30 @@ $ketchup:#f50020;
     font-size: 12px!important;
   }
 }
+#alive {
+  position: fixed;
+  top: 40%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  left:0px;
+  border: 5px solid red;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  z-index: 10;
+}
 .anita-bar {
   top:200px;
   height:510px;
-  border-top-right-radius: 20px;
+  border-top-right-radius:45px!important;
   width: 310px;
   z-index: 9;
   border: 5px solid green;
+  .anita-chat{
+    height:500px;
+    width: 300px;
+  }
 }
 .anita-close{
   height: 40px;
@@ -141,10 +158,14 @@ $ketchup:#f50020;
   .anita-bar {
     top:200px;
     height:310px;
-    border-top-right-radius: 20px;
+    border-top-right-radius:45px!important;
     width: 210px;
     z-index: 9;
     border: 5px solid green;
+    .anita-chat{
+      height:300px;
+      width: 200px;
+    }
   }
   .anita-close{
     height: 40px;
@@ -159,6 +180,9 @@ $ketchup:#f50020;
 }
 .footer{
   text-align: center;
-  height: 300px;
+  height: 200px;
   width: 100%;
+}
+.modal{
+  z-index: 999999;
 }
