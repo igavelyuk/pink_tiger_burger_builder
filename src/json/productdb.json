@@ -1,53 +1,85 @@
-[
-  {
-    "name":"Dallas",
-    "ukname":"Даллас",
-    "runame":"Даллас",
-    "weight":"220",
-    "recipe":"рис, норі, крем сир, вугор, огірок, кунжут, соус унагі",
-    "price":"106",
-    "calories":"",
-    "q-remain":"",
-    "stars":"5",
-    "res":"http://www.pandabc.com.ua/image/cache/catalog/25.06.2017/PandaRoll/Dallas/zip/IMG_1795-420x458.JPG"
-  },
-  {
-    "name":"Joker",
-    "ukname":"Джокер &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp",
-    "runame":"Джокер",
-    "weight":"230",
-    "recipe":"рис, норі, окунь, крем сир, огірок, соус спайс, тамаго, кунжут, ікра масаго",
-    "price":"75",
-    "calories":"",
-    "q-remain":"",
-    "stars":"5",
-    "res":"http://www.pandabc.com.ua/image/cache/catalog/28.06/roll2806/joker/IMG_4722-420x458.JPG"
-  },
-  {
-    "name":"Fried Vizuviy",
-    "ukname":"Запечений Візувій",
-    "runame":"Запечённый Визувий",
-    "weight":"335",
-    "recipe":"рис, норі, сир Філадельфія, сир Моцарелла, огірок, пекінська капуста, лосось, кунжут, соус унагі",
-    "price":"115",
-    "calories":"",
-    "q-remain":"",
-    "stars":"5",
-    "res":"http://www.pandabc.com.ua/image/cache/catalog/%D0%92%D1%96%D0%B7%D1%83%D0%B2%D1%96%D0%B9-420x458.JPG"
-  },
-  {
-    "name":"Fried Monblan",
-    "ukname":"Запечений Монблан",
-    "runame":"Запечённый Монблан",
-    "weight":"330",
-    "recipe":"рис, норі, крем сир, сир Моцарелла, лосось, огірок, ікра масаго, соус унагі",
-    "price":"115",
-    "calories":"",
-    "q-remain":"",
-    "stars":"5",
-    "res":"http://www.pandabc.com.ua/image/cache/catalog/IMG_0677-420x458.JPG"
-  }
-
-
-
-]
+{
+  "burgersarray": [{
+      "name": "Толерантность",
+      "weight": "250гр",
+      "recipe": "Фирменная котлета из черной свинины, Фирменная ржаная булка,  салат, соус, огурец маринований, лук белый, сир Чеддер",
+      "price": "145",
+      "promo": "true",
+      "img": "./img/africa.jpg"
+    },
+    {
+      "name": "Голландец",
+      "weight": "150гр",
+      "recipe": "Фирменная котлета (свинина), мягкий, нежные кусочки бекона, салат, соус, огурец маринований, лук белый, сир Чеддер",
+      "price": "65",
+      "promo": "false",
+      "img": "./img/becon.jpg"
+    },
+    {
+      "name": "Класика",
+      "weight": "100гр",
+      "recipe": "Фирменная котлета (свинина), салат, соус, цибуля, сир",
+      "price": "40",
+      "promo": "false",
+      "img": "./img/classic.jpg"
+    }
+  ],
+  "drinksarray": [{
+      "name": "Fanta",
+      "weight": "200",
+      "recipe": "330ml",
+      "price": "20",
+      "promo": "true",
+      "img": "./img/fanta-test.jpg"
+    },
+    {
+      "name": "Cola",
+      "weight": "200",
+      "recipe": "330ml Без сахара",
+      "price": "20",
+      "promo": "false",
+      "img": "./img/cola-test.jpg"
+    },
+    {
+      "name": "Pepsi",
+      "weight": "330ml",
+      "recipe": "330ml Сахар",
+      "price": "20",
+      "promo": "false",
+      "img": "./img/pepsi-test.jpg"
+    }
+  ],
+  "addonsarray": [{
+      "name": "Комбо заказ",
+      "weight": "400гр",
+      "recipe": "Соус, сосиска картошка фрии",
+      "price": "300",
+      "promo": "true",
+      "img": "./img/A_combo.jpg"
+    },
+    {
+      "name": "Картошка фрии",
+      "weight": "100гр",
+      "recipe": "Свежая картошка, жаренная во фритюре на подсолнечном масле",
+      "price": "145",
+      "promo": "false",
+      "img": "./img/A_free.jpg"
+    },
+    {
+      "name": "Пивной рай",
+      "weight": "200гр",
+      "recipe": "Хрустящие хлебцы из 6 сортов, жаренные на сливочном масле",
+      "price": "185",
+      "promo": "true",
+      "img": "./img/A_grenki.jpg"
+    },
+    {
+      "name": "Крылышки",
+      "weight": "200гр",
+      "recipe": "Жаренные крылышки в сладком остром соусе",
+      "price": "185",
+      "promo": "true",
+      "img": "./img/A_kriluwki.jpg"
+    }
+  ]
+}
