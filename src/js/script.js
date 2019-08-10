@@ -1,45 +1,62 @@
-$(function () {
+$(function() {
   $('[data-toggle="popover"]').popover()
 });
-//
-// const resPath = "/json/productdb.json";
-// function getData(callback) {
-//   $.get(resPath,function(response) {
-//     callback(response);
-//   });
-// }
-//
-// function createPromoEl(data){
-//   console.log(data);
-//   var injection = "";
-//   for (var i=0; i<=3; i++){
-//     if(i<=0){
-//       injection = '<div class="col-md-4 col-sm-1">';
-//       injection+='<h3 class="redtext">'+data[i].ukname+'&nbsp<span class="badge badge-secondary">Новинка</span></h3>';
-//       injection+='<div class="progress">';
-//       injection+='<div class="progress-bar red" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">90%</div>';
-//     }else{
-//       injection +='<div class="col-md-2 col-sm-1">';
-//       injection +='<h3 class="redtext">'+data[i].ukname+'</h3>';
-//       injection +='<div class="progress">';
-//       injection +='<div class="progress-bar" role="progressbar" style="width: 85%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="85">85%</div>';
-//     }
-//     // injection = '<div class="col-4">';
-//     // injection+='<h3 class="redtext">'+data[0].name+'<span class="badge badge-secondary">Новинка</span></h3>';
-//     // injection+='<div class="progress">';
-//     // injection+='<div class="progress-bar red" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">90%</div>';
-//     injection+='</div>';
-//     injection+='<hr>';
-//     injection+='<div class="text">';
-//     injection+= data[i].recipe;
-//     injection+='</div>';
-//     injection+='</div>';
-//
-//   }
-//   document.getElementById("hotpromo").innerHTML = injection;
-// }
-//
-// getData(function(a){
-//   createPromoEl(a);
-//   //console.log(a);
-// });
+$(document).ready(function() {
+  $('[data-toggle="tooltip"]').tooltip();
+});
+// $('#fullHeightModalRight').data('bs.modal').handleUpdate()
+
+$(function() {
+  $("#anitachat").hide();
+  $("#alive").show();
+
+  $("#anitaclose").click(function() {
+    $("#anitachat").hide();
+    $("#alive").show();
+  });
+  $("#alive").click(function() {
+    $("#anitachat").show();
+    $("#alive").hide();
+  });
+
+  $.getJSON("json/productdb.json", function(data) {
+    sectionsItems(data.burgersarray,0,"rounded-border-image");
+    sectionsItems(data.drinksarray,1,"rounded-border-image-blue");
+    sectionsItems(data.addonsarray,2,"rounded-border-image-orange");
+    function sectionsItems(el, i, colorClass){
+      var items = [];
+      $.each(el, function(key, val) {
+        console.log(key);
+        // element.key = key;
+        // element.items = items;
+        items.push('<div class="col item">');
+        items.push('<h3>' + val.name + '</h3>');
+        items.push('<div class="col">');
+        items.push('<img class="'+colorClass+'" src="' + val.img + '" alt="' + val.name + '" />');
+        items.push('</div><div class="col">');
+
+        if (val.promo == "true") {
+          items.push('<span class="spinner-grow spinner-grow-sm text-success float-right"></span>');
+        } else {
+          items.push('<span class="spinner-grow spinner-grow-sm text-white float-right"></span>');
+        }
+        items.push('<p>' + val.price + 'грн</p>');
+        items.push('<p class="font-weight-light">' + val.recipe + '</p>');
+        items.push('<div class="input-group">');
+        items.push('<input type="number" class="form-control" placeholder="0">');
+        items.push('<div class="input-group-append">');
+        items.push('<button class="btn btn-success btn-rounded" type="submit"> <i class="fas fa-cart-arrow-down"></i> </button>');
+        items.push('</div></div></div></div>');
+        //items{element: element}
+        items.join("");
+      });
+      $("<div/>", {
+        "class": "row",
+        html: items.join("")
+      }).appendTo("#"+Object.keys(data)[i]);
+      //inside function
+      //console.log(Object.keys(element)[0]);
+
+    }
+  });
+});
