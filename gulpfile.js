@@ -25,6 +25,8 @@ gulp.task('min', function() {
     .pipe(gulp.dest('./dist/css/Comfortaa/'));
   gulp.src('./src/css/webfonts/*')
     .pipe(gulp.dest('./dist/css/webfonts/'));
+    gulp.src('./src/json/*')
+      .pipe(gulp.dest('./dist/json/'));
 // Finish Copy Comfortaa and webfonts after minify to dist folder
 
   gulp.src('./src/css/*.css')
