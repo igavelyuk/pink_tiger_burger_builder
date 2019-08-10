@@ -25,11 +25,55 @@
     <strong>Геолокация</strong> должна быть включена.
   </div>
 
-<div class="anita-bar fixed-top">
-<!-- <iframe src ="https://getchat.me/pandabc.com.ua" height="500" width="300"></iframe>  full HD-->
-<iframe src ="https://getchat.me/pandabc.com.ua" height="300" width="200"></iframe>
-<button type="button" class="btn btn-success anita-close"><i class="fas fa-times-circle"></i></button>
-</div>
+  <!-- Central Modal Medium Success -->
+  <div class="modal fade" id="centralModalSuccess" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-notify modal-success" role="document">
+      <!--Content-->
+      <div class="modal-content">
+        <!--Header-->
+        <div class="modal-header">
+          <p class="heading lead">Список товаров</p>
+
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true" class="white-text">&times;</span>
+          </button>
+        </div>
+
+        <!--Body-->
+        <div class="modal-body">
+          <div class="text-center">
+            <i class="fas fa-check fa-4x mb-3 animated rotateIn text-primary"></i>
+          </div>
+          <div class="text-left">
+            <p><i class="fas fa-hamburger color-black"></i> 6 Толерантных Гамбургера - 870 грн</p>
+            <p><i class="fas fa-wine-bottle color-black"></i> 2 Pepsi-Cola - 60 грн</p>
+            <p><i class="fab fa-hotjar color-black"></i> 1 Соус - 10 грн</p>
+            <p><i class="fab fa-hotjar color-black"></i> 1 Картошка Фрии - 45 грн</p>
+            <p class="text-right">Всего к оплате - 985 грн</p>
+          </div>
+        </div>
+
+        <!--Footer-->
+        <div class="modal-footer justify-content-center">
+          <a type="button" class="btn btn-success text-white"> <i class="fas fa-user-check "></i> Доставить </a>
+          <a type="button" class="btn btn-outline-success waves-effect" data-dismiss="modal"> Отменить </a>
+        </div>
+      </div>
+      <!--/.Content-->
+    </div>
+  </div>
+  <!-- Central Modal Medium Success-->
+
+  <button id="alive" type="button" class="btn btn-success fixed-top" data-toggle="tooltip" title="Алита Чат"><i class="fas fa-sms"></i></button>
+  <div id="anitachat" class="anita-bar fixed-top">
+
+    <!-- full HD preset-->
+    <iframe src="https://getchat.me/pandabc.com.ua" class="anita-chat"></iframe>
+    <!-- height="500" width="300" -->
+    <!-- NON full HD preset-->
+    <!-- <iframe src ="https://getchat.me/pandabc.com.ua" height="300" width="200"></iframe> -->
+    <button id="anitaclose" type="button" class="btn btn-success anita-close"><i class="fas fa-times-circle"></i></button>
+  </div>
 
 
   <header>
@@ -43,6 +87,9 @@
         <i class="fas fa-bars"></i>
       </button>
       <div class="collapse navbar-collapse text-center" id="navbarNavAltMarkup">
+        <div class="col-md-4">
+
+        </div>
         <div class="navbar-nav">
           <a class="nav-item nav-link active" href="#one"><i class="fas fa-hamburger color-black"></i>Бургеры<span class="sr-only">(current)</span></a>
           <a class="nav-item nav-link" href="#two"><i class="fas fa-wine-bottle color-black"></i> Напитки </a>
@@ -54,7 +101,9 @@
       <div class="nav">
         <div class="shopping">
           <i class="fas fa-cart-arrow-down"></i> x 10 позиций <br>
-          <button class="btn btn-danger btn-rounded" type="submit"> Доставить </button>
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#centralModalSuccess">
+            Доставить
+          </button>
         </div>
       </div>
     </nav>
@@ -65,121 +114,16 @@
   </div>
 
   <div class="container top-space">
-    <div class="row">
-      <div class="col item">
-        <h3>Клаcсика</h3>
-        <div class="col">
-          <img class="rounded-border-image" src="./img/classic.jpg" alt="Cook girl" />
-        </div>
-        <div class="col">
-          <span class="spinner-grow spinner-grow-sm text-success float-right"></span>
-          <p>45грн</p>
-          <p class="font-weight-light">Фірмова Котлета (свинина), салат, соус, огірок маринований, цибуля кримська, сир Чеддер</p>
-          <div class="input-group">
-            <input type="number" class="form-control" placeholder="1">
-            <div class="input-group-append">
-              <button class="btn btn-success btn-rounded" type="submit"> <i class="fas fa-cart-arrow-down"></i> </button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col item">
-        <h3>Бекон</h3>
-        <div class="col">
-          <img class="rounded-border-image" src="./img/becon.jpg" alt="Becon burger" />
-        </div>
-        <div class="col">
-          <p>80грн</p>
-          <p class="font-weight-light">Фірмова Котлета (свинина), салат, соус, огірок маринований, цибуля кримська, сир Чеддер</p>
-          <div class="input-group">
-            <input type="number" class="form-control" placeholder="1">
-            <div class="input-group-append">
-              <button class="btn btn-success btn-rounded" type="submit"> <i class="fas fa-cart-arrow-down"></i> </button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col item">
-        <h3>Толерантность</h3>
-        <div class="col">
-          <img class="rounded-border-image" src="./img/africa.jpg" alt="Africa burger" />
-        </div>
-        <div class="col">
-
-          <p>145грн</p>
-          <p class="font-weight-light">Фірмова Котлета (свинина), салат, соус, огірок маринований, цибуля кримська, сир Чеддер</p>
-          <div class="input-group">
-            <input type="number" class="form-control" placeholder="1">
-            <div class="input-group-append">
-              <button class="btn btn-success btn-rounded" type="submit"> <i class="fas fa-cart-arrow-down"></i> </button>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div id="burgersarray">
 
     </div>
-
   </div>
 
   <div id="two" class="jumbotron jumbo-bg2 text-white text-center">
     <h1>Освежающие Напитки</h1>
   </div>
   <div class="container top-space">
-    <div class="row">
-      <div class="col item">
-        <h3>Pepsi</h3>
-        <div class="col">
-          <img class="rounded-border-image-blue" src="./img/pepsi-test.jpg" alt="Cook girl" />
-        </div>
-        <div class="col">
-          <span class="spinner-grow spinner-grow-sm text-success float-right"></span>
-          <p>30грн</p>
-          <p class="font-weight-light">Пепси кола 330 миллилитров, сахар</p>
-          <div class="input-group">
-            <input type="number" class="form-control" placeholder="1">
-            <div class="input-group-append">
-              <button class="btn btn-primary btn-rounded" type="submit"> <i class="fas fa-cart-arrow-down"></i> </button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col item">
-        <h3>Fanta</h3>
-        <div class="col">
-          <img class="rounded-border-image-blue" src="./img/fanta-test.jpg" alt="Becon burger" />
-        </div>
-        <div class="col">
-          <p>30грн</p>
-          <p class="font-weight-light">Фанта 330 миллилитров, заменитель сахара</p>
-          <div class="input-group">
-            <input type="number" class="form-control" placeholder="1">
-            <div class="input-group-append">
-              <button class="btn btn-primary btn-rounded" type="submit"> <i class="fas fa-cart-arrow-down"></i> </button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col item">
-        <h3>Cola</h3>
-        <div class="col">
-          <img class="rounded-border-image-blue" src="./img/cola-test.jpg" alt="Africa burger" />
-        </div>
-        <div class="col">
-
-          <p>30грн</p>
-          <p class="font-weight-light">Кока кола 330 миллилитров, сахар</p>
-          <div class="input-group">
-            <input type="number" class="form-control" placeholder="1">
-            <div class="input-group-append">
-              <button class="btn btn-primary btn-rounded" type="submit"> <i class="fas fa-cart-arrow-down"></i> </button>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div id="drinksarray">
 
     </div>
   </div>
@@ -188,68 +132,36 @@
     <h1>Приятные Дополнения</h1>
   </div>
   <div class="container top-space">
-    <div class="row">
-      <div class="col item">
-        <h3>Картошка Фрии</h3>
-        <div class="col">
-          <img class="rounded-border-image-orange" src="./img/A_free.jpg" alt="Cook girl" />
-        </div>
-        <div class="col">
-          <span class="spinner-grow spinner-grow-sm text-success float-right"></span>
-          <p>45грн</p>
-          <p class="font-weight-light">Суперхрустящая</p>
-          <div class="input-group">
-            <input type="number" class="form-control" placeholder="1">
-            <div class="input-group-append">
-              <button class="btn btn-warning btn-rounded" type="submit"> <i class="fas fa-cart-arrow-down"></i> </button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col item">
-        <h3>Крылышки</h3>
-        <div class="col">
-          <img class="rounded-border-image-orange" src="./img/A_kriluwki.jpg" alt="Becon burger" />
-        </div>
-        <div class="col">
-          <p>80грн</p>
-          <p class="font-weight-light">Куринные крылышки, с хрустящей корочкой, с пекантными специями</p>
-          <div class="input-group">
-            <input type="number" class="form-control" placeholder="1">
-            <div class="input-group-append">
-              <button class="btn btn-warning btn-rounded" type="submit"> <i class="fas fa-cart-arrow-down"></i> </button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col item">
-        <h3>Гренки</h3>
-        <div class="col">
-          <img class="rounded-border-image-orange" src="./img/A_grenki.jpg" alt="Africa burger" />
-        </div>
-        <div class="col">
-
-          <p>20грн</p>
-          <p class="font-weight-light">Чорошо прожаренные, хрустящие гренки из разных сортов хлеба</p>
-          <div class="input-group">
-            <input type="number" class="form-control" placeholder="1">
-            <div class="input-group-append">
-              <button class="btn btn-warning btn-rounded" type="submit"> <i class="fas fa-cart-arrow-down"></i> </button>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div id="addonsarray">
 
     </div>
   </div>
 
+  </div>
+  </div>
+
   <footer class="footer">
     <div class="container">
-      <a class="nav-tel-size" href="tel:0964141096" tabindex="-1" aria-disabled="true"><i class="fas fa-phone-square-alt"></i> Киевстар &nbsp (096)41-41-096</a><br>
-      <a class="nav-tel-size" href="tel:0634141096" tabindex="-1" aria-disabled="true"><i class="fas fa-phone-square-alt"></i> Лайф &nbsp &nbsp  &nbsp(063)41-41-096</a>
-      <hr/>
+      <div class="row">
+        <div class="col">
+          <hr />
+          <span class="text-default float-left"><i class="fas fa-phone-square-alt"></i> Kiyvstar (096)41-41-096</span><br>
+          <span class="text-default float-left"><i class="fas fa-phone-square-alt"></i> Life Cell (063)41-41-096</span>
+        </div>
+        <div class="col">
+          <hr />
+          <span class="text-default text-center"><i class="fas fa-flag"></i> Белая Церковь</span><br>
+          <span class="text-default text-center"><i class="fas fa-home"></i> вул. Героев Чернобыля 5а </span><br>
+          <a href="https://www.google.com/maps/place/49%C2%B047'08.2%22N+30%C2%B005'36.7%22E/@49.7856025,30.0913241,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0x0!8m2!3d49.7856025!4d30.0935128?hl=uk-ua">Google Maps</a>
+        </div>
+        <div class="col">
+          <hr />
+          <span class="text-default float-right"><i class="fas fa-clock"></i> Рабочий график</span><br>
+          <span class="text-default float-right"><i class="fas fa-user-friends"></i> 10:00 - 22:00 ежедневно</span><br>
+          <span class="text-default float-right"><i class="fas fa-exclamation-triangle"></i> ежедневно </span><br>
+        </div>
+      </div>
+      <hr />
       <span class="text-muted">Создано компанией gavelWeb 2019</span>
     </div>
   </footer>
