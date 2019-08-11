@@ -19,6 +19,8 @@ $(function() {
     $("#alive").hide();
   });
 
+
+
   $.getJSON("json/productdb.json", function(data) {
     sectionsItems(data.burgersarray,0,"rounded-border-image");
     sectionsItems(data.drinksarray,1,"rounded-border-image-blue");
@@ -45,11 +47,15 @@ $(function() {
         items.push('<div class="input-group">');
         items.push('<input type="number" class="form-control" placeholder="0">');
         items.push('<div class="input-group-append">');
-        items.push('<button class="btn btn-success btn-rounded" type="submit"> <i class="fas fa-cart-arrow-down"></i> </button>');
+        items.push('<button class="btn btn-success btn-rounded add-chart" type="submit"> <i class="fas fa-cart-arrow-down"></i> </button>');
         items.push('</div></div></div></div>');
         //items{element: element}
         items.join("");
+        $(".add-chart").click(function() {
+          console.log(this.parent);
+        });
       });
+
       $("<div/>", {
         "class": "row",
         html: items.join("")
@@ -60,3 +66,7 @@ $(function() {
     }
   });
 });
+
+// $(".add-chart").live('request',function(){
+//
+// });
