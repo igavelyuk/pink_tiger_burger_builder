@@ -41,15 +41,16 @@
 
         <!--Body-->
         <div class="modal-body">
-          <div class="text-center">
+          <div id="list-chart" class="text-center">
             <i class="fas fa-check fa-4x mb-3 animated rotateIn text-primary"></i>
           </div>
-          <div class="text-left">
-            <p><i class="fas fa-hamburger color-black"></i> 6 Толерантных Гамбургера - 870 грн</p>
+          <div id="listchart" class="text-left list-chart">
+
+            <!-- <p><i class="fas fa-hamburger color-black"></i> 6 Толерантных Гамбургера - 870 грн</p>
             <p><i class="fas fa-wine-bottle color-black"></i> 2 Pepsi-Cola - 60 грн</p>
             <p><i class="fab fa-hotjar color-black"></i> 1 Соус - 10 грн</p>
             <p><i class="fab fa-hotjar color-black"></i> 1 Картошка Фрии - 45 грн</p>
-            <p class="text-right">Всего к оплате - 985 грн</p>
+            <p class="text-right">Всего к оплате - 985 грн</p> -->
           </div>
         </div>
 
@@ -100,7 +101,7 @@
       </div>
       <div class="nav">
         <div class="shopping">
-          <i class="fas fa-cart-arrow-down"></i> x 10 позиций <br>
+          <i class="fas fa-cart-arrow-down"></i><span id="chartitems"></span> позиций <br>
           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#centralModalSuccess">
             Доставить
           </button>

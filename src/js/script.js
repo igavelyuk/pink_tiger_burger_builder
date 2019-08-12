@@ -1,15 +1,21 @@
+// Globals required for chart
+var currItem = "";
+var totalItem = [];
+var debugItem = totalItem[0];
+// End Globals required for chart
+// Sw on poppovers
 $(function() {
   $('[data-toggle="popover"]').popover()
 });
+//Sw on tooltips
 $(document).ready(function() {
   $('[data-toggle="tooltip"]').tooltip();
 });
 // $('#fullHeightModalRight').data('bs.modal').handleUpdate()
-
+// Hide chat window \ activate
 $(function() {
   $("#anitachat").hide();
   $("#alive").show();
-
   $("#anitaclose").click(function() {
     $("#anitachat").hide();
     $("#alive").show();
@@ -18,14 +24,13 @@ $(function() {
     $("#anitachat").show();
     $("#alive").hide();
   });
-
-
-
+  // Load resources from productdb.json
   $.getJSON("json/productdb.json", function(data) {
-    sectionsItems(data.burgersarray,0,"rounded-border-image");
-    sectionsItems(data.drinksarray,1,"rounded-border-image-blue");
-    sectionsItems(data.addonsarray,2,"rounded-border-image-orange");
-    function sectionsItems(el, i, colorClass){
+    sectionsItems(data.burgersarray, 0, "rounded-border-image");
+    sectionsItems(data.drinksarray, 1, "rounded-border-image-blue");
+    sectionsItems(data.addonsarray, 2, "rounded-border-image-orange");
+
+    function sectionsItems(el, i, colorClass) {
       var items = [];
       $.each(el, function(key, val) {
         console.log(key);
@@ -34,7 +39,7 @@ $(function() {
         items.push('<div class="col item">');
         items.push('<h3>' + val.name + '</h3>');
         items.push('<div class="col">');
-        items.push('<img class="'+colorClass+'" src="' + val.img + '" alt="' + val.name + '" />');
+        items.push('<img class="' + colorClass + '" src="' + val.img + '" alt="' + val.name + '" />');
         items.push('</div><div class="col">');
 
         if (val.promo == "true") {
@@ -51,22 +56,48 @@ $(function() {
         items.push('</div></div></div></div>');
         //items{element: element}
         items.join("");
-        $(".add-chart").click(function() {
-          console.log(this.parent);
-        });
+        // Init add to chart function
+        //Click on green BUTTON on Chart!
+
+        // End of init to chart function
       });
 
+// Dinamic create row with col objects
       $("<div/>", {
         "class": "row",
         html: items.join("")
-      }).appendTo("#"+Object.keys(data)[i]);
+      }).appendTo("#" + Object.keys(data)[i]);
+
+      $(".add-chart").click(function() {
+        //Title
+        var product = this.parentNode.parentNode.parentNode.parentNode;
+        var pname = product.firstElementChild.innerText;
+        //Image
+        var imgurl = this.parentNode.parentNode.parentNode.parentNode;
+        var pimg = imgurl.children[1].children[0].getAttributeNode("src").value;
+        //Price and Specs
+        var price = this.parentNode.parentNode.parentNode;
+        var pprice = parseInt(price.children[1].innerText);
+        // Input
+        var quantity = this.parentNode.parentNode;
+        var pq = quantity.firstElementChild.value;
+        var total = pq * pprice;
+        currItem = pq.toString() + "x" + pprice + " = " + total + "грн -  " + pname;
+        totalItem.push(currItem);
+        // console.log(key+" key-val "+val);
+        addToChart(totalItem);
+      });
+
+
       //inside function
       //console.log(Object.keys(element)[0]);
-
     }
   });
 });
 
-// $(".add-chart").live('request',function(){
-//
-// });
+function addToChart(itemObject) {
+  // itemObject.appendTo("#chartitems");
+  $("#listchart").html("<p>"+itemObject+"</p>");
+  $("#chartitems").text(itemObject.length);
+  console.log(itemObject);
+}
