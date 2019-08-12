@@ -2,6 +2,7 @@
 var currItem = "";
 var totalItem = [];
 var debugItem = totalItem[0];
+var totalPrice = [];
 // End Globals required for chart
 // Sw on poppovers
 $(function() {
@@ -25,6 +26,7 @@ $(function() {
     $("#alive").hide();
   });
   // Load resources from productdb.json
+  var x=0;
   $.getJSON("json/productdb.json", function(data) {
     sectionsItems(data.burgersarray, 0, "rounded-border-image");
     sectionsItems(data.drinksarray, 1, "rounded-border-image-blue");
@@ -52,10 +54,11 @@ $(function() {
         items.push('<div class="input-group">');
         items.push('<input type="number" class="form-control" placeholder="0">');
         items.push('<div class="input-group-append">');
-        items.push('<button class="btn btn-success btn-rounded add-chart" type="submit"> <i class="fas fa-cart-arrow-down"></i> </button>');
+        items.push('<button class="btn btn-success btn-rounded add-chart'+i+'" type="submit"> <i class="fas fa-cart-arrow-down"></i> </button>');
         items.push('</div></div></div></div>');
         //items{element: element}
         items.join("");
+        console.log(val.name);
         // Init add to chart function
         //Click on green BUTTON on Chart!
 
@@ -68,8 +71,10 @@ $(function() {
         html: items.join("")
       }).appendTo("#" + Object.keys(data)[i]);
 
-      $(".add-chart").click(function() {
+      $(".add-chart"+i).click(function() {
         //Title
+        x++;
+        console.log(x+"-----------------------");
         var product = this.parentNode.parentNode.parentNode.parentNode;
         var pname = product.firstElementChild.innerText;
         //Image
@@ -82,8 +87,9 @@ $(function() {
         var quantity = this.parentNode.parentNode;
         var pq = quantity.firstElementChild.value;
         var total = pq * pprice;
-        currItem = pq.toString() + "x" + pprice + " = " + total + "грн -  " + pname;
+        currItem = "<br>"+ pq.toString() + "x" + pprice + " = " + total + "грн -  " + pname;
         totalItem.push(currItem);
+        totalPrice.push(total);
         // console.log(key+" key-val "+val);
         addToChart(totalItem);
       });
@@ -96,8 +102,9 @@ $(function() {
 });
 
 function addToChart(itemObject) {
+var reducer = (accumulator, currentValue) => accumulator + currentValue;
   // itemObject.appendTo("#chartitems");
   $("#listchart").html("<p>"+itemObject+"</p>");
   $("#chartitems").text(itemObject.length);
-  console.log(itemObject);
+  $("#totalvalue").text(totalPrice.reduce(reducer)+"грн");
 }
