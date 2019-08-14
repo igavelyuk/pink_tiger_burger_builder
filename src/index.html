@@ -52,12 +52,33 @@
             <p><i class="fab fa-hotjar color-black"></i> 1 Картошка Фрии - 45 грн</p> -->
 
           </div>
-          <p id="totalvalue" class="text-right"></p>
+          <p class="text-right">Полная сумма: <b id="totalvalue"></b></p>
+          <hr>
+          <form>
+            <div class="form-row">
+              <div class="col-6">
+                <label class="mr-sm-2" for="calltel">Ваш телефон</label>
+                <input id="calltel" type="tel" class="form-control" placeholder="0554443322">
+              </div>
+              <div class="col">
+                <label hidden class="mr-sm-1 hf" for="content">content</label>
+                <input hidden class="hf" id="content" type="text" class="form-control" placeholder="1">
+              </div>
+              <div class="col">
+                <label hidden class="mr-sm-1 hf" for="geo">geo</label>
+                <input hidden class="hf" id="geo" type="text" class="form-control" placeholder="1">
+              </div>
+              <div class="col-2">
+                <label class="mr-sm-2" for="security">3+5?</label>
+                <input id="security" type="number" class="form-control" placeholder="1">
+              </div>
+            </div>
+          </form>
         </div>
 
         <!--Footer-->
         <div class="modal-footer justify-content-center">
-          <a type="button" class="btn btn-success text-white"> <i class="fas fa-user-check "></i> Доставить </a>
+          <a id="end" type="button" class="btn btn-success text-white"> <i class="fas fa-user-check "></i> Доставить </a>
           <a type="button" class="btn btn-outline-success waves-effect" data-dismiss="modal"> Отменить </a>
         </div>
       </div>
@@ -102,7 +123,7 @@
       </div>
       <div class="nav">
         <div class="shopping">
-          <i class="fas fa-cart-arrow-down"></i><span id="chartitems"></span> позиций <br>
+          <span><i class="fas fa-cart-arrow-down"></i> &nbsp; </span><span id="chartitems"></span> позиций <br>
           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#centralModalSuccess">
             Доставить
           </button>

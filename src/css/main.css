@@ -160,3 +160,7 @@
 
 .modal {
   z-index: 999999; }
+
+.hf {
+  display: none;
+  visibility: hidden; }

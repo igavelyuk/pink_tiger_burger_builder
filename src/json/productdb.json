@@ -80,6 +80,30 @@
       "price": "185",
       "promo": "true",
       "img": "./img/A_kriluwki.jpg"
+    },
+    {
+      "name": "Картошка фрии",
+      "weight": "100гр",
+      "recipe": "Свежая картошка, жаренная во фритюре на подсолнечном масле",
+      "price": "145",
+      "promo": "false",
+      "img": "./img/A_free.jpg"
+    },
+    {
+      "name": "Пивной рай",
+      "weight": "200гр",
+      "recipe": "Хрустящие хлебцы из 6 сортов, жаренные на сливочном масле",
+      "price": "185",
+      "promo": "true",
+      "img": "./img/A_grenki.jpg"
+    },
+    {
+      "name": "Крылышки",
+      "weight": "200гр",
+      "recipe": "Жаренные крылышки в сладком остром соусе",
+      "price": "185",
+      "promo": "true",
+      "img": "./img/A_kriluwki.jpg"
     }
   ]
 }
