@@ -190,3 +190,34 @@ $ketchup:#f50020;
   display: none;
   visibility: hidden;
 }
+.section404{
+  margin: auto;
+  text-align: center;
+  p:first-child{
+    margin-top:60px;
+    font-size: 8em;
+  }
+  p{
+    text-align: center;
+    font-size: 1em;
+    color: $m1-color;
+  }
+  p:last-child{
+    font-size: 2em;
+    color:$l-green-color;
+  }
+}
+.section-social{
+  img.spacer{
+    height: 300px;
+    width: 300px;
+  }
+  margin: auto;
+  padding-top: 100px;
+  text-align: center;
+  color: $l-green-color;
+  img{
+    height: 150px;
+    width: 150px;
+  }
+}

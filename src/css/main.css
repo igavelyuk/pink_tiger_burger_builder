@@ -164,3 +164,29 @@
 .hf {
   display: none;
   visibility: hidden; }
+
+.section404 {
+  margin: auto;
+  text-align: center; }
+  .section404 p:first-child {
+    margin-top: 60px;
+    font-size: 8em; }
+  .section404 p {
+    text-align: center;
+    font-size: 1em;
+    color: #ad6336; }
+  .section404 p:last-child {
+    font-size: 2em;
+    color: #61cd70; }
+
+.section-social {
+  margin: auto;
+  padding-top: 100px;
+  text-align: center;
+  color: #61cd70; }
+  .section-social img.spacer {
+    height: 300px;
+    width: 300px; }
+  .section-social img {
+    height: 150px;
+    width: 150px; }

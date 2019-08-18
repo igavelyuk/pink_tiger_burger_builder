@@ -52,8 +52,9 @@ $(function() {
         items.push('<p>' + val.price + 'грн</p>');
         items.push('<p class="font-weight-light">' + val.recipe + '</p>');
         items.push('<div class="input-group">');
-        items.push('<input type="number" class="form-control" placeholder="0">');
+        items.push('<input type="number" class="form-control" placeholder="0" required>');
         items.push('<div class="input-group-append">');
+        items.push('<div class="invalid-feedback">Незозможно принять</div>');
         items.push('<button class="btn btn-success btn-rounded add-chart' + i + '" type="submit"> <i class="fas fa-cart-arrow-down"></i> </button>');
         items.push('</div></div></div></div>');
         //items{element: element}
@@ -78,8 +79,8 @@ $(function() {
         var product = this.parentNode.parentNode.parentNode.parentNode;
         var pname = product.firstElementChild.innerText;
         //Image
-        var imgurl = this.parentNode.parentNode.parentNode.parentNode;
-        var pimg = imgurl.children[1].children[0].getAttributeNode("src").value;
+        // var imgurl = this.parentNode.parentNode.parentNode.parentNode;
+        // var pimg = imgurl.children[1].children[0].getAttributeNode("src").value;
         //Price and Specs
         var price = this.parentNode.parentNode.parentNode;
         var pprice = parseInt(price.children[1].innerText);
@@ -108,55 +109,24 @@ function addToChart(itemObject) {
   $("#chartitems").text(itemObject.length);
   $("#totalvalue").text(totalPrice.reduce(reducer) + "грн");
 }
-/*********************************************************
-Geolocation
-*********************************************************/
-window.onload = function() {
-  var startPos;
-  var geoSuccess = function(position) {
-    startPos = position;
-    console.log(startPos.coords.latitude);
-    console.log(startPos.coords.longitude);
-  };
-  navigator.geolocation.getCurrentPosition(geoSuccess);
-};
 
-
-// (function() {
-// if ("geolocation" in navigator) {
-//   // if browser can find GPS position
-//   //calling firstarg=success_function secondarg=unsucsess_function
-//   //options: maximumAge Is a positive long value indicating the maximum age in milliseconds of a possible cached position 0-infinity
-//   navigator.geolocation.getCurrentPosition(gcpOK, gcpError);
-// } else {
-//   console.log('%c Oh my heavens! ', 'background: #222; color: #bada55');
-//   //    https://ipstack.com/quickstart
-//   // altPosition(); //Alternative service find by IP
-// }
-// //Alternative
-// })();
-//
-// function gcpError() {
-//   //position.coords.latitude +","+ position.coords.longitude;
-//   /*position.coords.latitude+","+position.coords.longitude*/
-//   $.getJSON('http://maps.googleapis.com/maps/api/geocode/json?latlng=' + position.coords.latitude + "," + position.coords.longitude, function(data, status, xhr) {
-//     var globalCityCountry = data.results[1].address_components[2].long_name;
-//     var cCode = data.results[1].address_components[3].short_name;
-//     console.log('%c ' + globalCityCountry, 'background: #222; color: #bada55');
-//   });
-// }
-// // $.getJSON("http://api.ipstack.com/check?access_key=5a9d245a0d7a8992f1dd9e953c4cd7d5", function(data, status, xhr) {
-// //   var g = data.ip + data.city + "," + data.country_name+data.latitude+data.longitude"--------------------------";
-//   console.log(g);
-// });
-
+$("#end").hide();
+$("#calltel").keyup(function(){
+  if(($("#calltel").val()).length>5){
+    $("#end").show();
+  }else{
+    $("#end").hide();
+  }
+});
 $("#end").click(function() {
   setTimeout(()=>{
     $("#end").show();
-    $("#end").show();
   },2000);
-  post('/contact/index.php', {name: 'Johnny Bravo'});
-  $("#end").hide();
+  let telephone = $("#calltel").val();
+  let security = $("#security").val();
+  if(telephone.length>6||security>1){
+    post('/contact/index.php', {products:totalItem, total_price:totalPrice ,telephone:telephone, security:security });
+  }
 });
 
 
