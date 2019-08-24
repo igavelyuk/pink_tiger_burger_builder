@@ -21,15 +21,17 @@ $(document).ready(function() {
 // Hide chat window \ activate
 $(function() {
   $("#anitachat").hide();
-  $("#alive").show();
+  // $("#alive").show();
   $("#anitaclose").click(function() {
-    $("#anitachat").hide();
-    $("#alive").show();
+  if($('#anita-exist')){
+    $('#anita-exist').remove();
+  }
+  $("#anitachat").hide();
+  $("#alive").show();
   });
   $("#alive").click(function() {
-    $('#anitachat').append(`<iframe src="https://getchat.me/pandabc.com.ua" class="anita-chat"></iframe>`);
-    $("#anitachat").show();
-    $("#alive").hide();
+      $('#anitachat').append(`<iframe id="anita-exist" src="https://getchat.me/pandabc.com.ua" class="anita-chat"></iframe>`);
+      $("#anitachat").show();
   });
   // Load resources from productdb.json
   var x = 0;
