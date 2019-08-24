@@ -9,27 +9,37 @@ if (isset($_POST['products'])&&isset($_POST['total_price'])&&isset($_POST['telep
   // echo "First part pass";
   $products = $_POST['products'];
   $total_price = $_POST['total_price'];
+  $total_price=explode(",", $total_price);
+  $total_price=array_sum($total_price);
+  //$total_price=implode(",", $total_price);
   $telephone = $_POST['telephone'];
   $security = $_POST['security'];
+  $ugeo = $_POST['ugeo'];
   $location_message = get_ip();
   if($security==8){
-    send_mail($products, $total_price,$location_message,$telephone,$security);
+    send_mail($products, $total_price,$location_message,$telephone,$security,$ugeo);
   }else{errorOrder();}
 } else {
 errorOrder();
 }
 
-function send_mail($products, $total_price, $location, $telephone,$security){
-  $to_email = "order@burgerpanda.com.ua";
+function send_mail($products, $total_price, $location, $telephone,$security,$ugeo){
+  $to_email = "order@burgerpandabc.com.ua";
   $now = new DateTime();
   $formatted = $now->format('Y-m-d H:i:s');    // MySQL datetime format
   $timestamp = $now->getTimestamp();           // Unix Timestamp -- Since PHP 5.3
+  $usergeo = explode(",", $ugeo);
+  if($usergeo[0]=="false"){
+    $addition = "Користувач вирішив не показувати його місце розташування.";
+  }else{
+    $addition = 'Користувач дозволив використовувати його місце розташування <a href="https://www.latlong.net/c/?lat='.$usergeo[0].'&long='.$usergeo[1].'"> На карту, в радіусі '.$usergeo[2].' метрів, дата і час:'.$usergeo[4].' </a>';
+  }
 
-  $subject = "Новый заказ ".$formatted;
+  $subject = "Нове замовлення ".$formatted;
   $headers  = 'MIME-Version: 1.0' . "\r\n";
   $headers .= 'Content-type: text/html; charset=UTF-8' . "\r\n";
   // Create email headers
-      $headers .= "From: order@burgerpanda.com.ua"."\r\n".
+      $headers .= "From: order@burgerpandabc.com.ua"."\r\n".
       'Reply-To: '.$from."\r\n" .
       'X-Mailer: PHP/' . phpversion();
       // Compose a simple HTML email message
@@ -45,7 +55,7 @@ function send_mail($products, $total_price, $location, $telephone,$security){
       <tbody>
       <tr>
       <td style="padding:5px 10px" width="40%" valign="middle" align="left">
-      <a href="pandabc.site" style="text-decoration:none; border-radius:75px;" target="_blank" data-saferedirecturl="https://www.pandabc.site">
+      <a href="pandabc.site" style="text-decoration:none; border-radius:75px;" target="_blank" data-saferedirecturl="https://www.burgerpandabc.com.ua/">
       <div>
       <div style="height:150px;width:150px; background:#05c820; color:white; border-radius:75px;">
       <div style="height:65px;">
@@ -58,25 +68,25 @@ function send_mail($products, $total_price, $location, $telephone,$security){
       </a>
       </td>
       <td style="padding:5px 10px" width="60%" valign="middle" align="right">
-      <h1 style="font-size:20px;color:#3b6e93;margin-top:0px;font-weight:normal">Бургер Панда Белая Церковь</h1>
-      <div style="color:#666;font-size:11px">Автоматизированный сервис доставки еды</div>
+      <h1 style="font-size:20px;color:#3b6e93;margin-top:0px;font-weight:normal">Бургер Панда Біла Церква</h1>
+      <div style="color:#666;font-size:11px">Автоматизований сервіс доставки їжі</div>
       </td>
       </tr>
       </tbody>
       </table>';
       //main part
-      $body.= '<div style="padding:5px;margin:10px;font-size:2em">Детали заказа - '.$timestamp.' - '.$formatted.'/'.$security.'</div>';
-      $body.= '<div style="padding:5px;margin:10px">'.$products.'</div>';
-      $body.= '<div style="padding:5px;margin:10px;text-align:right;">Полная сумма: '.$total_price.'грн</div><hr>';
-      $body.= '<div style="padding:5px;margin:10px;text-align:center;">Телефон заказчика: +38 '.$telephone.'</div><hr>';
-      $body.= '<div style="padding:5px;margin:10px;text-align:center;color:green;">Местоположение, оределено как: '.$location.'</div><hr>';
+      $body.= '<div style="padding:5px;margin:10px;font-size:2em">Деталі замовлення - '.$timestamp.' - '.$formatted.'/'.$security.'</div>';
+      $body.= '<div style="padding:5px;margin:10px;font-size:1.5em">'.$products.'</div>';
+      $body.= '<div style="padding:5px;margin:10px;text-align:right;font-size:1.5em"> Загальна сума: '.$total_price.'грн</div><hr>';
+      $body.= '<div style="padding:5px;margin:10px;text-align:center;">Телефон заказчика: +38 '.$telephone.' '.$addition.' .</div><hr>';
+      $body.= '<div style="padding:5px;margin:10px;text-align:center;color:green;">Місцезнаходження, оределенно як: '.$location.'</div><hr>';
       //main part
       $body.= '<hr style="border:0;color:#ccc;background-color:#ccc;height:1px;width:100%;text-align:left">
       <div style="color:#666;font-size:11px;padding:20px 10px 10px">
-      С уважением, служба доставки еды "Бургер Панда".<br>
-      Данное письмо сформировано автоматически, просьба не отвечать на него по электронной почте.<br>
-      горячая линия: Kiyvstar (096)41-41-096 и Life Cell (063)41-41-096 <br>
-      Также если произошли технические проблемы напишите письмо <a href="mailto:support@burgerpanda.com.ua" target="_blank" data-saferedirecturl="burgerpanda.com.ua">support@burgerpanda.com.ua</a><br>
+      З повагою, служба доставки їжі "Бургер Панда".<br>
+      Даний лист сформовано автоматично, прохання не відповідати на нього по електронній пошті.<br>
+      горяча ліния: Kiyvstar (096)41-41-096 и Life Cell (063)41-41-096 <br>
+      Також якщо відбулися технічні проблеми напишіть лист <a href="mailto:support@burgerpandabc.com.ua" target="_blank" data-saferedirecturl="burgerpandabc.com.ua">support@burgerpandabc.com.ua</a><br>
       </div>
       </td>
       </tr>
@@ -84,7 +94,7 @@ function send_mail($products, $total_price, $location, $telephone,$security){
       </table>
       <div style="text-align:center;color:#666;font-size:11px;padding:20px 50px 10px 50px">
       Copyright © 2006—2019
-      <a href="burgerpanda.com.ua" target="_blank" data-saferedirecturl="burgerpanda.com.ua">
+      <a href="burgerpandabc.com.ua" target="_blank" data-saferedirecturl="burgerpandabc.com.ua">
       "Бургер Панда"</a>
       </div>
       </td>
@@ -92,7 +102,7 @@ function send_mail($products, $total_price, $location, $telephone,$security){
       </tbody>
       </table></body></html>';
       if ( mail($to_email, $subject, $body, $headers)) {
-        readfile("200.html");
+        readfile("https://www.burgerpandabc.com.ua/contact/200.html");
       } else {
         errorOrder();
       }
@@ -142,10 +152,10 @@ function get_ip(){
   //   "zip": "02115",
   //   "latitude": 42.3424,
   //   "longitude": -71.0878,
-  return $api_result['city']."-".['zip'].' Геокоординаты заказчика на <a href="https://www.latlong.net/c/?lat='.$api_result['latitude'].'&long='.$api_result['longitude'].'">https://www.latlong.net/c/?lat='.$api_result['latitude'].'&long='.$api_result['longitude'].'</a>';
+  return $api_result["city"].'Геокоордінати на <a href="https://www.latlong.net/c/?lat='.$api_result["latitude"].'&long='.$api_result["longitude"].'">Перейти</a>';
 }
 function errorOrder(){
-    readfile("404.html");
+    readfile("https://www.burgerpandabc.com.ua/contact/404.html");
 }
 
 ?>

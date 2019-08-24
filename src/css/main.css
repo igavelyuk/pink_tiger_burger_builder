@@ -1,6 +1,17 @@
 * {
   font-family: "Confortaa Bold"; }
 
+h1, h2, h3 {
+  font-size: 2em !important; }
+
+h4 {
+  font-size: 2em !important;
+  color: white !important;
+  background: white !important; }
+  h4 p {
+    color: white !important;
+    background: white !important; }
+
 .first-plane {
   z-index: 9999; }
 
@@ -82,13 +93,14 @@
 
 .jumbo-bg1 {
   margin-top: 70px;
-  background-image: url("../img/piqsels.com-id-jfsak.jpg"); }
+  background-image: url("../img/A-burger-section.jpg"); }
 
 .jumbo-bg2 {
-  background-image: url("../img/pepsi-jumbo.jpg"); }
+  background-image: url("../img/B-drinks-section.jpg"); }
 
 .jumbo-bg3 {
-  background-image: url("../img/additions-jumbo.jpg"); }
+  background-position: bottom 10px right;
+  background-image: url("../img/C-additions-section.jpg"); }
 
 .item {
   margin-bottom: 1em;

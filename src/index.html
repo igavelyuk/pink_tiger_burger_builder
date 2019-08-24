@@ -1,11 +1,39 @@
 <!doctype html>
-<html lang="ru">
+<html lang="uk">
 
 <head>
   <meta charset="utf-8">
+
+  <meta name="description" content="Бургери дешевше і смачніше, ніж у рекламі бургерів з Лепсом, Тіматі та Кiркоровим">
+  <meta name="keywords" content="доставка бургерів біла церква,замовити реально смачний бургери, соковитий бургери, запашний, теплий, оригінальний, той самий, твій найкращий, ебана бургери срочно, бургери 24, бургери два ночі">
+  <meta name="author" content="Бургер Панда Біла Церква">
+  <meta name="geo.region" content="UA-30" />
+  <meta name="geo.placename" content="Bila Tserkva" />
+  <meta name="geo.position" content="49.786008;30.093145" />
+  <meta name="ICBM" content="49.786008, 30.093145" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Гарячі і соковиті бургери в Білій Церкві від ПАНДИ з безкоштовною доставкою." />
+  <meta property="og:description" content="Реально смачний бургер, соковитий, запашний, теплий, оригінальний, той самий, твій найкращий"/>
+  <meta property="og:image" content="https://burgerpandabc.com.ua/fb.png" />
+  <meta property="og:url" content="https://burgerpandabc.com.ua/" />
+  <meta property="og:site_name" content="burgerpandabc.com.ua" />
+  <meta property="article:published_time" content="2019-08-18T23:52:59+00:00" />
+  <meta property="article:modified_time" content="2019-08-18T23:52:59+00:00" />
+  <meta property="og:updated_time" content="2019-08-18T23:52:59+00:00" />
+  <!-- <meta property="fb:app_id" content="" /> -->
+  <meta name="twitter:card" content="Preview" />
+  <!-- <meta name="twitter:site" content="" /> -->
+  <meta name="twitter:title" content="Гарячі і соковиті бургери в Білій Церкві від ПАНДИ з безкоштовною доставкою." />
+  <meta name="twitter:description" content="Реально смачний бургер, соковитий, запашний, теплий, оригінальний, той самий, твій найкращий" />
+  <meta name="twitter:image" content="https://burgerpandabc.com.ua/fb.png" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="shortcut icon" type="image/png" href="favicon.png" />
+  <link rel="image_src" href="fb.png">
+
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Бургер Панда - Белая Церковь</title>
   <!-- <link href="https://fonts.googleapis.com./css?family=Baloo+Bhaina|Rubik+Mono+One" rel="stylesheet"> -->
 
   <link href="./css/fontawesome.css" rel="stylesheet">
@@ -13,17 +41,22 @@
   <link href="./css/brands.css" rel="stylesheet">
   <link href="./css/solid.css" rel="stylesheet">
 
+  <!-- Magnific Popup core CSS file -->
+  <link rel="stylesheet" href="./css/magnific-popup.css">
   <link rel="stylesheet" href="./css/bootstrap-reboot.min.css">
   <link rel="stylesheet" href="./css/bootstrap-grid.min.css">
   <link rel="stylesheet" href="./css/bootstrap.min.css">
   <link rel="stylesheet" href="./css/main.css">
+  <title>Доставка у Білій Церкві соковиті бургери напої картопля фрі</title>
 </head>
 
 <body>
-  <!-- <div class="alert alert-warning alert-dismissible first-plane stick-bottom">
-    <button type="button" class="close" data-dismiss="alert">&times;</button>
-    <strong>Геолокация</strong> должна быть включена.
-  </div> -->
+  <div id="infopanel">
+    <!-- <div class="alert alert-warning alert-dismissible first-plane stick-bottom">
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+      <strong>Геолокация</strong> должна быть включена.
+    </div> -->
+  </div>
 
   <!-- Central Modal Medium Success -->
   <div class="modal fade" id="centralModalSuccess" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -32,7 +65,7 @@
       <div class="modal-content">
         <!--Header-->
         <div class="modal-header">
-          <p class="heading lead">Список товаров</p>
+          <p class="heading lead">Список товарів</p>
 
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true" class="white-text">&times;</span>
@@ -52,9 +85,9 @@
             <p><i class="fab fa-hotjar color-black"></i> 1 Картошка Фрии - 45 грн</p> -->
 
           </div>
-          <p class="text-right">Полная сумма: <b id="totalvalue"></b></p>
+          <p class="text-right">Загальна сума: <b id="totalvalue"></b></p>
           <hr>
-          <p>Введите номер телефона и пройдите антибота, после чего появится кнопка заказа.</p>
+          <p>Введіть номер телефону та пройдіть антибот, після чого з'явиться кнопка замовлення.</p>
           <form>
             <div class="form-row">
               <div class="col-8">
@@ -71,8 +104,8 @@
 
         <!--Footer-->
         <div class="modal-footer justify-content-center">
-          <a id="end" type="button" class="btn btn-success text-white"> <i class="fas fa-user-check "></i> Доставить </a>
-          <a type="button" class="btn btn-outline-success waves-effect" data-dismiss="modal"> Отменить </a>
+          <a id="end" type="button" title="Доставити товари до вашого дому" class="btn btn-success text-white"> <i class="fas fa-user-check "></i> Доставити </a>
+          <a type="button" title="Скасувати доставку" class="btn btn-outline-success waves-effect" data-dismiss="modal"> Скасувати</a>
         </div>
       </div>
       <!--/.Content-->
@@ -84,7 +117,7 @@
   <div id="anitachat" class="anita-bar fixed-top">
 
     <!-- full HD preset-->
-    <iframe src="https://getchat.me/pandabc.com.ua" class="anita-chat"></iframe>
+    <!-- <iframe src="https://getchat.me/pandabc.com.ua" class="anita-chat"></iframe> -->
     <!-- height="500" width="300" -->
     <!-- NON full HD preset-->
     <!-- <iframe src ="https://getchat.me/pandabc.com.ua" height="300" width="200"></iframe> -->
@@ -107,19 +140,19 @@
 
         </div>
         <div class="navbar-nav">
-          <a class="nav-item nav-link active" href="#one"><i class="fas fa-hamburger color-black"></i>Бургеры<span class="sr-only">(current)</span></a>
-          <a class="nav-item nav-link" href="#two"><i class="fas fa-wine-bottle color-black"></i> Напитки </a>
-          <a class="nav-item nav-link" href="#three"><i class="fab fa-hotjar color-black"></i> Другое </a>
+          <a class="nav-item nav-link active" href="#one" title="Перейти у каталог Бургерів"><i class="fas fa-hamburger color-black"></i>Бургери<span class="sr-only">(current)</span></a>
+          <a class="nav-item nav-link" href="#two" title="Перейти у каталог Напоїв"><i class="fas fa-wine-bottle color-black"></i> Напої </a>
+          <a class="nav-item nav-link" href="#three" title="Перейти у каталог Соусів та Супів"><i class="fab fa-hotjar color-black"></i> Інше </a>
           <!-- <a class="nav-item nav-link" href="404.html"><i class="fab fa-hotjar color-black"></i> 404 test </a> -->
-          <a class="nav-item nav-link d-lg-none d-xl-none" href="viber://add?number=380666540976"><i class="fab fa-viber color-black"></i> Перезвоним</a>
-          <a class="nav-item nav-link d-lg-none d-xl-none" href="tel:380666540976"><i class="fas fa-id-card-alt color-black"></i> Добавте нас</a>
+          <a class="nav-item nav-link d-lg-none d-xl-none" href="viber://add?number=380666540976" title="Додати контакти у Вайбер"><i class="fab fa-viber color-black"></i> Передзвонимо</a>
+          <a class="nav-item nav-link d-lg-none d-xl-none" href="tel:380666540976" title="Додати контакти в ваш мобільний телефон"><i class="fas fa-id-card-alt color-black"></i> Додайте нас</a>
         </div>
       </div>
       <div class="nav">
         <div class="shopping">
-          <span><i class="fas fa-cart-arrow-down"></i> &nbsp; </span><span id="chartitems"></span> позиций <br>
+          <span><i class="fas fa-cart-arrow-down"></i> &nbsp; </span><span id="chartitems"></span> позицій <br>
           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#centralModalSuccess">
-            Доставить
+            Доставити
           </button>
         </div>
       </div>
@@ -127,28 +160,28 @@
   </header>
 
   <div id="one" class="jumbotron jumbo-bg1 text-white text-center">
-    <h1>Сочный Горячий Бургер</h1>
+    <h1 title="Каталог Бургерів">Соковитий Гарячий Бургер</h1>
   </div>
 
-  <div class="container top-space">
+  <div title="Список Бургерів" class="container top-space">
     <div id="burgersarray">
 
     </div>
   </div>
 
   <div id="two" class="jumbotron jumbo-bg2 text-white text-center">
-    <h1>Освежающие Напитки</h1>
+    <h2 title="Каталог Напоїв">Освіжаючі Напої</h2>
   </div>
-  <div class="container top-space">
+  <div title="Список Напоїв" class="container top-space">
     <div id="drinksarray">
 
     </div>
   </div>
   <!-- container end -->
   <div id="three" class="jumbotron jumbo-bg3 text-white text-center">
-    <h1>Приятные Дополнения</h1>
+    <h3 title="Перейти у каталог Соусів та Супів та інші додатки">Приємні Додатки</h3>
   </div>
-  <div class="container top-space">
+  <div title="Лист Соусів та Супів та інші додатків" class="container top-space">
     <div id="addonsarray">
 
     </div>
@@ -167,20 +200,25 @@
         </div>
         <div class="col">
           <hr />
-          <span class="text-default text-center"><i class="fas fa-flag"></i> Белая Церковь</span><br>
+          <span class="text-default text-center"><i class="fas fa-flag"></i> м. Біла Церква</span><br>
           <span class="text-default text-center"><i class="fas fa-home"></i> вул. Героев Чернобыля 5а </span><br>
-          <a href="https://www.google.com/maps/place/49%C2%B047'08.2%22N+30%C2%B005'36.7%22E/@49.7856025,30.0913241,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0x0!8m2!3d49.7856025!4d30.0935128?hl=uk-ua">Google Maps</a>
+          <a title="Перейти на Гугл Мапу" href="https://www.google.com/maps/place/49%C2%B047'08.2%22N+30%C2%B005'36.7%22E/@49.7856025,30.0913241,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0x0!8m2!3d49.7856025!4d30.0935128?hl=uk-ua">Google Maps</a>
         </div>
         <div class="col">
           <hr />
-          <span class="text-default float-right"><i class="fas fa-clock"></i> Рабочий график</span><br>
+          <span class="text-default float-right"><i class="fas fa-clock"></i> Робочий графік</span><br>
           <span class="text-default float-right"><i class="fas fa-user-friends"></i> 10:00 - 22:00 </span><br>
-          <span class="text-default float-right"><i class="fas fa-exclamation-triangle"></i> ежедневно </span><br>
+          <span class="text-default float-right"><i class="fas fa-exclamation-triangle"></i> щодня </span><br>
         </div>
       </div>
       <hr />
-      <span class="text-muted">Создано компанией gavelWeb 2019</span>
+      <span class="text-muted">Створено компанією gavelWeb 2019</span>
     </div>
+    <h4 title="лист усіх можливих сервісів нашого сайту">Доставка у Білій Церкві бургери кола пиво фанта картопля фрі сосиски, хавчик, попоїсти</h4>
+    <p title="русский">Где заказать бургеры в белой церкви, кто работает 24 на 7 по доставке еды в белой церкви, вечерний жор, рештлт заказать но где, бургерпанда отличный сервис отзывы бургерпандабц ком юа, где заказать пиво в 3 часа ночи или 2 часа ночи или час ночи или четыре часа ночи пять часов ночи.</p>
+    <p title="українська">Где попоїсти бургерів на ніч, біла церква бургері, відгуки бургерпандабц бургерпанда, київ біля, смачно та дешего</p>
+    <p title="heccrfz b erhfbycrfz">pfrfpfnb ];e d ,sksq wthrds order food bila cerkva ltituj gjgj]cnb ,ehuthsd yfqrhfib pdbyedfxe. ,ehuthb oj djyb yfqcvfxysis ,ehuthb ,ehuths ,ehu ,tkfz wthrjdm ,ehuths
+ufdtkdt, gavelweb гавелвеб </p>
   </footer>
 
 
@@ -204,6 +242,8 @@
   <!-- <script src="./js/tooltip.min.js" crossorigin="anonymous" type="application/javascript"></script> -->
   <script src="./js/bootstrap.bundle.min.js" crossorigin="anonymous" type="application/javascript"></script>
   <script src="./js/bootstrap.min.js" crossorigin="anonymous" type="application/javascript"></script>
+  <!-- Magnific Popup core JS file -->
+  <script src="./js/jquery.magnific-popup.js" crossorigin="anonymous" type="application/javascript"></script>
   <script src="./js/script.js" crossorigin="anonymous" type="application/javascript"></script>
 </body>
 

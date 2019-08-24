@@ -1,27 +1,51 @@
 {
   "burgersarray": [{
-      "name": "Толерантность",
-      "weight": "250гр",
-      "recipe": "Фирменная котлета из черной свинины, Фирменная ржаная булка,  салат, соус, огурец маринований, лук белый, сир Чеддер",
-      "price": "145",
+      "name": "Бекон с Сыром и Луком",
+      "weight": "000гр",
+      "recipe": "Generate Lorem Ipsum placeholder text. Select the number of characters, words, sentences or paragraphs, and hit generate!",
+      "price": "100",
       "promo": "true",
-      "img": "./img/africa.jpg"
+      "img": "./img/Small_Burgers/A_Cheese_Beacon.jpg"
     },
     {
-      "name": "Голландец",
-      "weight": "150гр",
-      "recipe": "Фирменная котлета (свинина), мягкий, нежные кусочки бекона, салат, соус, огурец маринований, лук белый, сир Чеддер",
+      "name": "Котлета с Огурцом",
+      "weight": "000гр",
+      "recipe": "Generate Lorem Ipsum placeholder text. Select the number of characters, words, sentences or paragraphs, and hit generate!",
       "price": "65",
       "promo": "false",
-      "img": "./img/becon.jpg"
+      "img": "./img/Small_Burgers/A_Cotlet_Cucumber.jpg"
     },
     {
-      "name": "Класика",
-      "weight": "100гр",
-      "recipe": "Фирменная котлета (свинина), салат, соус, цибуля, сир",
-      "price": "40",
+      "name": "Котлета с Халапеньйо",
+      "weight": "000гр",
+      "recipe": "Generate Lorem Ipsum placeholder text. Select the number of characters, words, sentences or paragraphs, and hit generate!",
+      "price": "65",
       "promo": "false",
-      "img": "./img/classic.jpg"
+      "img": "./img/Small_Burgers/A_Cotlet_Mayonese.jpg"
+    },
+    {
+      "name": "Котлета с Огурцом",
+      "weight": "000гр",
+      "recipe": "Generate Lorem Ipsum placeholder text. Select the number of characters, words, sentences or paragraphs, and hit generate!",
+      "price": "65",
+      "promo": "false",
+      "img": "./img/Small_Burgers/A_Cotlet_Cheese_Cucumber.jpg"
+    },
+    {
+      "name": "Мясной ну Очень Мясной",
+      "weight": "000гр",
+      "recipe": "Generate Lorem Ipsum placeholder text. Select the number of characters, words, sentences or paragraphs, and hit generate!",
+      "price": "65",
+      "promo": "false",
+      "img": "./img/Small_Burgers/A_Cotlet_Saussage.jpg"
+    },
+    {
+      "name": "Итальянский Салями",
+      "weight": "000гр",
+      "recipe": "Generate Lorem Ipsum placeholder text. Select the number of characters, words, sentences or paragraphs, and hit generate!",
+      "price": "65",
+      "promo": "false",
+      "img": "./img/Small_Burgers/A_Salami.jpg"
     }
   ],
   "drinksarray": [{
