@@ -25,8 +25,14 @@ gulp.task('min', function() {
     .pipe(gulp.dest('./dist/css/Comfortaa/'));
   gulp.src('./src/css/webfonts/*')
     .pipe(gulp.dest('./dist/css/webfonts/'));
-    gulp.src('./src/json/*')
-      .pipe(gulp.dest('./dist/json/'));
+  gulp.src('./src/json/*')
+    .pipe(gulp.dest('./dist/json/'));
+  gulp.src('./src/contact/*')
+    .pipe(gulp.dest('./dist/contact/'));
+  gulp.src('./src/sitemap.xml')
+    .pipe(gulp.dest('./dist/'));
+  gulp.src('./src/robots.txt')
+    .pipe(gulp.dest('./dist/'));
 // Finish Copy Comfortaa and webfonts after minify to dist folder
 
   gulp.src('./src/css/*.css')
