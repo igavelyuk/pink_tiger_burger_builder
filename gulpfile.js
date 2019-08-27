@@ -48,7 +48,7 @@ gulp.task('min', function() {
       ignoreFiles: ['.combo.js', '-min.js']
     }))
     .pipe(gulp.dest('./dist/js/'));
-  gulp.src('./src/img/*')
+  gulp.src('./src/img/**/*')
     .pipe(image({
       pngquant: true,
       optipng: false,

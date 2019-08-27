@@ -1,133 +1,102 @@
 {
   "burgersarray": [{
-      "name": "Бекон с Сыром и Луком",
-      "weight": "000гр",
-      "recipe": "Generate Lorem Ipsum placeholder text. Select the number of characters, words, sentences or paragraphs, and hit generate!",
-      "price": "100",
+      "name": "Класичний бургер.",
+      "weight": "---гр",
+      "recipe": "- котлета, соус-бургер, цибуля, маринований огірок <br><br><br>",
+      "price": "50",
       "promo": "true",
-      "img": "./img/Small_Burgers/A_Cheese_Beacon.jpg"
+      "img": "./img/Burgers/A_Cotlet_Cucumber.jpg"
     },
     {
-      "name": "Котлета с Огурцом",
-      "weight": "000гр",
-      "recipe": "Generate Lorem Ipsum placeholder text. Select the number of characters, words, sentences or paragraphs, and hit generate!",
-      "price": "65",
+      "name": "Чізбургер &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ",
+      "weight": "---гр",
+      "recipe": "- котлета, сир чеддер, маринований огірок, цибуля, помідор <br><br><br>",
+      "price": "60",
       "promo": "false",
-      "img": "./img/Small_Burgers/A_Cotlet_Cucumber.jpg"
+      "img": "./img/Burgers/A_Cotlet_Cheese_Cucumber.jpg"
     },
     {
-      "name": "Котлета с Халапеньйо",
-      "weight": "000гр",
-      "recipe": "Generate Lorem Ipsum placeholder text. Select the number of characters, words, sentences or paragraphs, and hit generate!",
-      "price": "65",
-      "promo": "false",
-      "img": "./img/Small_Burgers/A_Cotlet_Mayonese.jpg"
+      "name": "Український бургер.",
+      "weight": "---гр",
+      "recipe": "-дві котлети, соус бургер, сир чедер, мариновані огірки, помідор, сир моцарелла, перець халапеньо (гострий).",
+      "price": "90",
+      "promo": "true",
+      "img": "./img/Burgers/A_Cotlet_Mayonese.jpg"
     },
     {
-      "name": "Котлета с Огурцом",
+      "name": "Піцца - Бургер",
       "weight": "000гр",
-      "recipe": "Generate Lorem Ipsum placeholder text. Select the number of characters, words, sentences or paragraphs, and hit generate!",
-      "price": "65",
+      "recipe": "- котлета, сир Чеддер, сир моцарелла, соус BBQ, ковбаса чорізо, картопля фрі, соус вершковий, маринований огірок, помідор черрі, руккола.",
+      "price": "100",
       "promo": "false",
-      "img": "./img/Small_Burgers/A_Cotlet_Cheese_Cucumber.jpg"
+      "img": "./img/Burgers/A_Salami.jpg"
+    }
+  ],
+  "saladsarray": [{
+      "name": "Грецький",
+      "weight": "---гр",
+      "recipe": " ",
+      "price": "000",
+      "promo": "true",
+      "img": "./img/Salads/B_Greek_Salad.jpg"
     },
     {
-      "name": "Мясной ну Очень Мясной",
-      "weight": "000гр",
-      "recipe": "Generate Lorem Ipsum placeholder text. Select the number of characters, words, sentences or paragraphs, and hit generate!",
-      "price": "65",
+      "name": "Традиційний",
+      "weight": "---гр",
+      "recipe": " ",
+      "price": "000",
       "promo": "false",
-      "img": "./img/Small_Burgers/A_Cotlet_Saussage.jpg"
-    },
-    {
-      "name": "Итальянский Салями",
-      "weight": "000гр",
-      "recipe": "Generate Lorem Ipsum placeholder text. Select the number of characters, words, sentences or paragraphs, and hit generate!",
-      "price": "65",
-      "promo": "false",
-      "img": "./img/Small_Burgers/A_Salami.jpg"
+      "img": "./img/Salads/B_Tradition_Salad.jpg"
     }
   ],
   "drinksarray": [{
-      "name": "Fanta",
-      "weight": "200",
+      "name": "Пепсі",
+      "weight": "330",
       "recipe": "330ml",
       "price": "20",
       "promo": "true",
-      "img": "./img/fanta-test.jpg"
+      "img": "./img/Drinks/C_Pepsi33.jpg"
     },
     {
-      "name": "Cola",
-      "weight": "200",
-      "recipe": "330ml Без сахара",
+      "name": "Боржомі",
+      "weight": "500",
+      "recipe": "0.5 l",
       "price": "20",
       "promo": "false",
-      "img": "./img/cola-test.jpg"
+      "img": "./img/Drinks/C_Borjomi.jpg"
     },
     {
-      "name": "Pepsi",
-      "weight": "330ml",
-      "recipe": "330ml Сахар",
+      "name": "Сік Сандора",
+      "weight": "500",
+      "recipe": "0.5 l",
       "price": "20",
       "promo": "false",
-      "img": "./img/pepsi-test.jpg"
+      "img": "./img/Drinks/C_Sandora.jpg"
     }
   ],
   "addonsarray": [{
-      "name": "Комбо заказ",
-      "weight": "400гр",
-      "recipe": "Соус, сосиска картошка фрии",
-      "price": "300",
+      "name": "Класичний Комбо",
+      "weight": "---гр",
+      "recipe": "Класичний бургер + напій 0.33 + картопля фрі(100 гр.)",
+      "price": "79",
       "promo": "true",
-      "img": "./img/A_combo.jpg"
+      "img": "./img/Incl/D_Combo.jpg"
     },
     {
-      "name": "Картошка фрии",
-      "weight": "100гр",
-      "recipe": "Свежая картошка, жаренная во фритюре на подсолнечном масле",
-      "price": "145",
-      "promo": "false",
-      "img": "./img/A_free.jpg"
-    },
-    {
-      "name": "Пивной рай",
-      "weight": "200гр",
-      "recipe": "Хрустящие хлебцы из 6 сортов, жаренные на сливочном масле",
-      "price": "185",
+      "name": "Чізбургер Комбо",
+      "weight": "---гр",
+      "recipe": "Чізбургер + напій 0.33 + картопля фрі (100 гр.)",
+      "price": "89",
       "promo": "true",
-      "img": "./img/A_grenki.jpg"
+      "img": "./img/Incl/A_free.jpg"
     },
     {
-      "name": "Крылышки",
-      "weight": "200гр",
-      "recipe": "Жаренные крылышки в сладком остром соусе",
-      "price": "185",
+      "name": "Український Комбо",
+      "weight": "---гр",
+      "recipe": "Український бургер + напій 0.33 + картопля фрі (100 гр.)",
+      "price": "129",
       "promo": "true",
-      "img": "./img/A_kriluwki.jpg"
-    },
-    {
-      "name": "Картошка фрии",
-      "weight": "100гр",
-      "recipe": "Свежая картошка, жаренная во фритюре на подсолнечном масле",
-      "price": "145",
-      "promo": "false",
-      "img": "./img/A_free.jpg"
-    },
-    {
-      "name": "Пивной рай",
-      "weight": "200гр",
-      "recipe": "Хрустящие хлебцы из 6 сортов, жаренные на сливочном масле",
-      "price": "185",
-      "promo": "true",
-      "img": "./img/A_grenki.jpg"
-    },
-    {
-      "name": "Крылышки",
-      "weight": "200гр",
-      "recipe": "Жаренные крылышки в сладком остром соусе",
-      "price": "185",
-      "promo": "true",
-      "img": "./img/A_kriluwki.jpg"
+      "img": "./img/Incl/A_grenki.jpg"
     }
   ]
 }

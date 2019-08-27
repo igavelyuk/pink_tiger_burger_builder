@@ -15,7 +15,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta property="og:type" content="article" />
   <meta property="og:title" content="Гарячі і соковиті бургери в Білій Церкві від ПАНДИ з безкоштовною доставкою." />
-  <meta property="og:description" content="Реально смачний бургер, соковитий, запашний, теплий, оригінальний, той самий, твій найкращий"/>
+  <meta property="og:description" content="Реально смачний бургер, соковитий, запашний, теплий, оригінальний, той самий, твій найкращий" />
   <meta property="og:image" content="https://burgerpandabc.com.ua/fb.png" />
   <meta property="og:url" content="https://burgerpandabc.com.ua/" />
   <meta property="og:site_name" content="burgerpandabc.com.ua" />
@@ -99,6 +99,29 @@
                 <input id="security" type="number" class="form-control" placeholder="1">
               </div>
             </div>
+            <!-- Edited  -->
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+              <label class="form-check-label" for="inlineCheckbox1">Не передзвонювати</label>
+            </div>
+
+            <div class="form-group">
+              <label for="inputAddress2">Адреса</label>
+              <input type="text" class="form-control" id="inputAddress2" placeholder="вул. Героев Чернобыля">
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputCity">Номер Будинку</label>
+                <input type="text" class="form-control" id="inputCity" placeholder="5 А">
+              </div>
+              <div class="form-group col-md-4">
+                <label for="inputState">Місто</label>
+                <select id="inputState" class="form-control">
+                  <option selected>Біла Церква</option>
+                  <option>...</option>
+                </select>
+              </div>
+            </div>
           </form>
         </div>
 
@@ -153,7 +176,7 @@
     </nav>
   </header>
 
-  <div id="one" class="jumbotron jumbo-bg1 text-white text-center">
+  <div id="one" class="jumbotron jumbo-bg0 text-white text-center">
     <h1 title="Каталог Бургерів">Соковитий Гарячий Бургер</h1>
   </div>
 
@@ -163,8 +186,17 @@
     </div>
   </div>
 
-  <div id="two" class="jumbotron jumbo-bg2 text-white text-center">
-    <h2 title="Каталог Напоїв">Освіжаючі Напої</h2>
+  <div id="two" class="jumbotron jumbo-bg1 text-white text-center">
+    <h2 title="Каталог Салатів">Каталог Салатів</h2>
+  </div>
+  <div title="Список Салатів" class="container top-space">
+    <div id="saladsarray">
+
+    </div>
+  </div>
+
+  <div id="three" class="jumbotron jumbo-bg2 text-white text-center">
+    <h3 title="Каталог Напоїв">Освіжаючі Напої</h3>
   </div>
   <div title="Список Напоїв" class="container top-space">
     <div id="drinksarray">
@@ -172,8 +204,8 @@
     </div>
   </div>
   <!-- container end -->
-  <div id="three" class="jumbotron jumbo-bg3 text-white text-center">
-    <h3 title="Перейти у каталог Соусів та Супів та інші додатки">Приємні Додатки</h3>
+  <div id="four" class="jumbotron jumbo-bg3 text-white text-center">
+    <h4 title="Перейти у каталог Соусів та Супів та інші додатки">Комбо</h4>
   </div>
   <div title="Лист Соусів та Супів та інші додатків" class="container top-space">
     <div id="addonsarray">
@@ -208,11 +240,12 @@
       <hr />
       <span class="text-muted">Створено компанією gavelWeb 2019</span>
     </div>
-    <h4 title="лист усіх можливих сервісів нашого сайту">Доставка у Білій Церкві бургери кола пиво фанта картопля фрі сосиски, хавчик, попоїсти</h4>
-    <p title="русский">Где заказать бургеры в белой церкви, кто работает 24 на 7 по доставке еды в белой церкви, вечерний жор, рештлт заказать но где, бургерпанда отличный сервис отзывы бургерпандабц ком юа, где заказать пиво в 3 часа ночи или 2 часа ночи или час ночи или четыре часа ночи пять часов ночи.</p>
-    <p title="українська">Где попоїсти бургерів на ніч, біла церква бургері, відгуки бургерпандабц бургерпанда, київ біля, смачно та дешего</p>
-    <p title="heccrfz b erhfbycrfz">pfrfpfnb ];e d ,sksq wthrds order food bila cerkva ltituj gjgj]cnb ,ehuthsd yfqrhfib pdbyedfxe. ,ehuthb oj djyb yfqcvfxysis ,ehuthb ,ehuths ,ehu ,tkfz wthrjdm ,ehuths
-ufdtkdt, gavelweb гавелвеб </p>
+    <h5 class="hi" title="лист усіх можливих сервісів нашого сайту">Доставка у Білій Церкві бургери кола пиво фанта картопля фрі сосиски, хавчик, попоїсти</h5>
+    <p class="hi" title="русский">Где заказать бургеры в белой церкви, кто работает 24 на 7 по доставке еды в белой церкви, вечерний жор, рештлт заказать но где, бургерпанда отличный сервис отзывы бургерпандабц ком юа, где заказать пиво в 3 часа ночи
+      или 2 часа ночи или час ночи или четыре часа ночи пять часов ночи.</p>
+    <p class="hi" title="українська">Где попоїсти бургерів на ніч, біла церква бургері, відгуки бургерпандабц бургерпанда, київ біля, смачно та дешего</p>
+    <p class="hi" title="heccrfz b erhfbycrfz">pfrfpfnb ];e d ,sksq wthrds order food bila cerkva ltituj gjgj]cnb ,ehuthsd yfqrhfib pdbyedfxe. ,ehuthb oj djyb yfqcvfxysis ,ehuthb ,ehuths ,ehu ,tkfz wthrjdm ,ehuths
+      ufdtkdt, gavelweb гавелвеб </p>
   </footer>
 
 

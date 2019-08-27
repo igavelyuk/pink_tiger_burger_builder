@@ -14,18 +14,17 @@ $ketchup:#f50020;
 *{
   // outline: 1px solid red;
   font-family: "Confortaa Bold";
-
-h1, h2, h3{
+}
+h1, h2, h3, h4{
   font-size: 2em!important;
 }
 h4{
-  font-size: 2em!important;
-  p{
+  color:black;
+  // text-decoration: underline;
+}
+.hi{
     color: white!important;
     background: white!important;
-  }
-  color: white!important;
-  background: white!important;
 }
 .first-plane{
   z-index: 9999;
@@ -78,6 +77,15 @@ h4{
   margin: 0px 20px 0px -10px;
   border-radius: 50%;
 }
+.rounded-border-image-red{
+  float:left;
+  height: 170px;
+  width: 170px;
+  background-color: red;
+  padding:5px;
+  margin: 0px 20px 0px -10px;
+  border-radius: 50%;
+}
 .rounded-border-image-blue{
   float:left;
   height: 170px;
@@ -111,9 +119,13 @@ h4{
   background-repeat: no-repeat;
   background-size: cover;
 }
-.jumbo-bg1{
+.jumbo-bg0{
   margin-top: 70px;
   background-image: url("../img/A-burger-section.jpg");
+}
+.jumbo-bg1{
+  margin-top: 70px;
+  background-image: url("../img/A-salad-section.jpg");
 }
 .jumbo-bg2{
   background-image: url("../img/B-drinks-section.jpg");

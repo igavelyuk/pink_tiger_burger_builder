@@ -37,8 +37,9 @@ $(function() {
   var x = 0;
   $.getJSON("json/productdb.json", function(data) {
     sectionsItems(data.burgersarray, 0, "rounded-border-image");
-    sectionsItems(data.drinksarray, 1, "rounded-border-image-blue");
-    sectionsItems(data.addonsarray, 2, "rounded-border-image-orange");
+    sectionsItems(data.saladsarray, 1, "rounded-border-image-red");
+    sectionsItems(data.drinksarray, 2, "rounded-border-image-blue");
+    sectionsItems(data.addonsarray, 3, "rounded-border-image-orange");
 
     function sectionsItems(el, i, colorClass) {
       var items = [];
@@ -46,7 +47,7 @@ $(function() {
         console.log(key);
         // element.key = key;
         // element.items = items;
-        items.push('<div class="col-4 item">');
+        items.push('<div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 item">');   // 	col-sm-1 col-md-1 	col-lg-4 col-xl-4
         items.push('<h3>' + val.name + '</h3>');
         items.push('<div class="col">');
         items.push('<a class="popup-link" href="' + val.img+'.BIG.jpg">');
