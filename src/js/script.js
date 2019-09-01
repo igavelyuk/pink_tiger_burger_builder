@@ -144,17 +144,34 @@ $("#end").click(function() {
   }, 2000);
   let telephone = $("#calltel").val();
   let security = $("#security").val();
+  var notcall = "empty";
+  if($("#notcall").attr("checked") != 'checked'){
+    notcall = "Передзвоніть мені будьласка";
+  }else{
+    notcall = "Будь ласка не дзвонить мені";
+  }
+  let inputAddress = $("#inputAddress").val();
+  let inputCity = $("#inputCity").val();
+  let inputState = $("#inputState option:selected" ).text();
   if ([] === typeof(globalPosition)) {
     globalPosition.push("false");
     globalPosition = globalPosition.toString();
   }
+
+  // console.log(telephone+" "+security+" "+notcall+" "+inputAddress+" "+inputCity+" "+inputState);
+
+
   if (telephone.length > 6 || security == 8) {
     post('/contact/index.php', {
       products: totalItem,
       total_price: totalPrice,
       telephone: telephone,
       security: security,
-      ugeo: globalPosition
+      ugeo: globalPosition,
+      notcall:notcall,
+      input_address:inputAddress,
+      input_city:inputCity,
+      input_state:inputState
     });
   }
 });
