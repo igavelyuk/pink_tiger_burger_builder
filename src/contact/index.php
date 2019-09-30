@@ -24,16 +24,17 @@ if (isset($_POST['products'])&&isset($_POST['total_price'])&&isset($_POST['telep
   $input_address=$_POST['input_address'];
   $input_city=$_POST['input_city'];
   $input_state=$_POST['input_state'];
+  $selfvinos=$_POST['self_vinos'];
   $location_message = get_ip();
   if($security==8){
-    send_mail($products, $total_price,$location_message,$telephone,$security,$ugeo,$notcall, $input_address,$input_city,$input_state);
-    viberMessage($products, $total_price,$location_message,$telephone,$security,$ugeo,$notcall, $input_address,$input_city,$input_state);
+    send_mail($products, $total_price,$location_message,$telephone,$security,$ugeo,$notcall, $input_address,$input_city,$input_state,$selfvinos);
+    viberMessage($products, $total_price,$location_message,$telephone,$security,$ugeo,$notcall, $input_address,$input_city,$input_state,$selfvinos);
   }else{errorOrder();}
 } else {
 errorOrder();
 }
 
-function send_mail($products, $total_price, $location, $telephone,$security,$ugeo,$notcall, $input_address,$input_city,$input_state){
+function send_mail($products, $total_price, $location, $telephone,$security,$ugeo,$notcall, $input_address,$input_city,$input_state,$selfvinos){
   $to_email = "order@burgerpandabc.com.ua";
   $now = new DateTime();
   $formatted = $now->format('Y-m-d H:i:s');    // MySQL datetime format
@@ -88,7 +89,11 @@ function send_mail($products, $total_price, $location, $telephone,$security,$uge
       $body.= '<div style="padding:5px;margin:10px;font-size:2em">Деталі замовлення - '.$timestamp.' - '.$formatted.'/'.$security.'</div>';
       $body.= '<div style="padding:5px;margin:10px;font-size:1.5em">'.$products.'</div>';
       $body.= '<div style="padding:5px;margin:10px;text-align:right;font-size:1.5em"> Загальна сума: '.$total_price.'грн</div><hr>';
-      $body.= '<div style="padding:5px;margin:10px;text-align:right;font-size:1.5em"> Адреса '.$input_address.' - '.$input_city.' - '.$input_state.'</div><hr>';
+      if($selfvinos=="true"){
+        $body.= '<div style="padding:5px;margin:10px;text-align:right;font-size:1.5em"> Кліент бажае забрати сам </div><hr>';
+      }else{
+        $body.= '<div style="padding:5px;margin:10px;text-align:right;font-size:1.5em"> Адреса '.$input_address.' - '.$input_city.' - '.$input_state.'</div><hr>';
+      }
       $body.= '<div style="padding:5px;margin:10px;text-align:right;font-size:1.5em"> Телефон заказчика: +38 '.$telephone." ".$notcall.'</div><hr>';
       $body.= '<div style="padding:5px;margin:10px;text-align:center;">'.$addition.' .</div><hr>';
       $body.= '<div style="padding:5px;margin:10px;text-align:center;color:green;">Місцезнаходження, оределенно як: '.$location.'</div><hr>';
@@ -143,7 +148,7 @@ function get_ip(){
       return $ipaddress;
   }
   $ip = get_client_ip_env();
-  $access_key = '';
+  $access_key = '5a9d245a0d7a8992f1dd9e953c4cd7d5';
 
   // Initialize CURL:
   $ch = curl_init('http://api.ipstack.com/'.$ip.'?access_key='.$access_key.'');
@@ -166,19 +171,61 @@ function get_ip(){
   //   "longitude": -71.0878,
   return $api_result["city"].'Геокоордінати на <a href="https://www.latlong.net/c/?lat='.$api_result["latitude"].'&long='.$api_result["longitude"].'">Перейти</a>';
 }
-function viberMessage($products, $total_price,$location_message,$telephone,$security,$ugeo,$notcall, $input_address,$input_city,$input_state){
-  $url = "https://chatapi.viber.com/pa/send_message";
+function viberMessage($products, $total_price,$location_message,$telephone,$security,$ugeo,$notcall, $input_address,$input_city,$input_state,$selfvinos){
+  $now = new DateTime();
+  $formatted = $now->format('Y-m-d H:i:s');
+  $nproducts=str_replace("<br>", "", $products); // outputs Hello Dolly!
+  $newproducts = preg_replace('/\s+/', '', $nproducts);
+  // =str_replace("&nbsp;", "", $nproducts);
+  $url = "https://chatapi.viber.com/pa/broadcast_message";
   $ch = curl_init($url);
-  $data = '{"auth_token":"",
-   "receiver": "",
+  $data = '{"auth_token":"4a3512151fe7d0b7-ce915ef61ce4f48c-adbe331e08891d54",
+   "receiver": "i084psqf2Ugc7pSBudoddA==",
    "min_api_version":1,
    "sender":{
       "name":"burgerPanda",
       "avatar":"https://burgerpandabc.com.ua/img/logo.png"
    },
+   "broadcast_list":[
+      "i084psqf2Ugc7pSBudoddA==",
+      "r022tkjztFMRioF+X+UB7Q=="
+   ],
    "tracking_data":"tracking data",
-   "type":"text",
-   "text":"Замовлення: '.$products." Загальна сумма".$total_price." ".$telephone." ".$notcall." Доставка :".$input_address." ".$input_city." ".$input_state.'"}';
+   "type":"text",';
+   if($selfvinos=="true"){
+     $data .= '"text":"Замовлення ('.$formatted.')кліент забире сам: '.$newproducts." Загальна сумма:".$total_price."грн. Тел:".$telephone." ".$notcall.'"}';
+   }else{
+     $data .= '"text":"Замовлення ('.$formatted.'): '.$newproducts." Загальна сумма:".$total_price."грн. Тел:".$telephone." ".$notcall.". Доставка :".$input_address." ".$input_city." ".$input_state.'"}';
+   }
+
+  // curl_setopt($ch, CURLOPT_URL, $url);
+  //$jsonData = json_encode($data);
+  curl_setopt($ch, CURLOPT_POST,1);
+  //edited
+  curl_setopt($ch, CURLOPT_POSTFIELDS,$data);
+  curl_setopt($ch, CURLOPT_HTTPHEADER,array('Content-Type: application/json'));
+  curl_exec($ch);
+
+  //new MessageFormatter
+  $data = '{"auth_token":"4a3512151fe7d0b7-ce915ef61ce4f48c-adbe331e08891d54",
+   "receiver": "i084psqf2Ugc7pSBudoddA==",
+   "min_api_version":1,
+   "sender":{
+      "name":"burgerPanda-povar",
+      "avatar":"https://burgerpandabc.com.ua/img/logo.png"
+   },
+   "broadcast_list":[
+      "i084psqf2Ugc7pSBudoddA==",
+      "r022tkjztFMRioF+X+UB7Q=="
+   ],
+   "tracking_data":"tracking data",
+   "type":"text",';
+   if($selfvinos=="true"){
+     $data .= '"text":"Замовлення ('.$formatted.') кліент забире сам: '.$newproducts.'"}';
+   }else{
+     $data .= '"text":"Замовлення ('.$formatted.') для доставки  '.$newproducts.'. "}';
+   }
+
   // curl_setopt($ch, CURLOPT_URL, $url);
   //$jsonData = json_encode($data);
   curl_setopt($ch, CURLOPT_POST,1);
@@ -186,7 +233,7 @@ function viberMessage($products, $total_price,$location_message,$telephone,$secu
   curl_setopt($ch, CURLOPT_POSTFIELDS,$data);
   curl_setopt($ch, CURLOPT_HTTPHEADER,array('Content-Type: application/json'));
   $result = curl_exec($ch);
-  return $result;
+  // return $result;
 }
 function errorOrder(){
     readfile("https://www.burgerpandabc.com.ua/contact/404.html");

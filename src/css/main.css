@@ -19,7 +19,7 @@ h4 {
   left: 150px; }
   .navbg-panda-color a {
     left: 50%;
-    width: 10em;
+    width: 8em;
     color: #fff;
     font-size: 1em; }
 
@@ -89,7 +89,7 @@ h4 {
   color: #000; }
 
 .top-space {
-  margin-top: 0px; }
+  margin-top: 50px; }
 
 .jumbotron {
   /* The image used */
@@ -211,3 +211,16 @@ h4 {
   .section-social img {
     height: 150px;
     width: 150px; }
+
+.pm {
+  padding: 10px;
+  margin: 10px;
+  animation: blinker 3s linear infinite; }
+
+@keyframes blinker {
+  0% {
+    opacity: 0;
+    transform: scale(1); }
+  50% {
+    opacity: 1;
+    transform: scale(2); } }

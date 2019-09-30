@@ -1,102 +1,119 @@
 {
   "burgersarray": [{
-      "name": "Класичний бургер.",
-      "weight": "---гр",
-      "recipe": "- котлета, соус-бургер, цибуля, маринований огірок <br><br><br>",
-      "price": "50",
+      "name": "Класичний бургер",
+      "weight": "200гр",
+      "recipe": "котлета, соус-бургер, цибуля, маринований огірок <br> <br> <br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;",
+      "price": "39",
       "promo": "true",
-      "img": "./img/Burgers/A_Cotlet_Cucumber.jpg"
+      "img": "./img/Burgers/a1.jpg"
     },
     {
-      "name": "Чізбургер &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ",
-      "weight": "---гр",
-      "recipe": "- котлета, сир чеддер, маринований огірок, цибуля, помідор <br><br><br>",
-      "price": "60",
+      "name": "Чізбургер &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;",
+      "weight": "220гр",
+      "recipe": "котлета, сир чеддер, маринований огірок, цибуля, помідор <br><br><br><br>",
+      "price": "49",
       "promo": "false",
-      "img": "./img/Burgers/A_Cotlet_Cheese_Cucumber.jpg"
+      "img": "./img/Burgers/a2.jpg"
     },
     {
-      "name": "Український бургер.",
-      "weight": "---гр",
+      "name": "Український бургер",
+      "weight": "350гр",
       "recipe": "-дві котлети, соус бургер, сир чедер, мариновані огірки, помідор, сир моцарелла, перець халапеньо (гострий).",
-      "price": "90",
+      "price": "59",
       "promo": "true",
-      "img": "./img/Burgers/A_Cotlet_Mayonese.jpg"
-    },
-    {
-      "name": "Піцца - Бургер",
-      "weight": "000гр",
-      "recipe": "- котлета, сир Чеддер, сир моцарелла, соус BBQ, ковбаса чорізо, картопля фрі, соус вершковий, маринований огірок, помідор черрі, руккола.",
-      "price": "100",
-      "promo": "false",
-      "img": "./img/Burgers/A_Salami.jpg"
+      "img": "./img/Burgers/a5.jpg"
     }
   ],
   "saladsarray": [{
-      "name": "Грецький",
-      "weight": "---гр",
-      "recipe": " ",
-      "price": "000",
-      "promo": "true",
+      "name": "Салат Грецький &nbsp; &nbsp; &nbsp; &nbsp;",
+      "weight": "200гр",
+      "recipe": "сир фета, перець болгарський, помідор черрі, огірок, масліни, цибуля червона",
+      "price": "39",
+      "promo": "false",
       "img": "./img/Salads/B_Greek_Salad.jpg"
     },
     {
-      "name": "Традиційний",
-      "weight": "---гр",
-      "recipe": " ",
-      "price": "000",
-      "promo": "false",
+      "name": "Салат Традиційний",
+      "weight": "200гр",
+      "recipe": "помідор черрі, огірок, цибуля червона, болгарський перець, петрушка <br><br>",
+      "price": "29",
+      "promo": "true",
       "img": "./img/Salads/B_Tradition_Salad.jpg"
     }
   ],
   "drinksarray": [{
       "name": "Пепсі",
-      "weight": "330",
-      "recipe": "330ml",
-      "price": "20",
+      "weight": "330 мл",
+      "recipe": "вода, сахар, диоксид углерода, ортофосфорная кислота, кофеин, стаб. гуммиарабик, аромат... Белкі 0, Жири 0, Углеводи 45г (128 ккал)",
+      "price": "15",
       "promo": "true",
       "img": "./img/Drinks/C_Pepsi33.jpg"
     },
     {
       "name": "Боржомі",
-      "weight": "500",
-      "recipe": "0.5 l",
+      "weight": "500 мл",
+      "recipe": "Мікроэлементи на 100г: Калий 3,0 мг, Кальций 13,0 мг, Кремний 10,0 мг, Магний 20—150 мг, Натрий 200,0 мг, Сера 0,8 мг, Хлор 50,0 мг",
       "price": "20",
       "promo": "false",
-      "img": "./img/Drinks/C_Borjomi.jpg"
+      "img": "./img/Drinks/C_BorCan.jpg"
     },
     {
       "name": "Сік Сандора",
-      "weight": "500",
-      "recipe": "0.5 l",
+      "weight": "500 мл",
+      "recipe": "Фрукт часть 30%, апельсіновий сік концентрованиий, цукровий сироп, лимонна кислота, ароматизатор. Белкі 0, Жири 0, Углеводи 45г (215ккал)",
       "price": "20",
       "promo": "false",
       "img": "./img/Drinks/C_Sandora.jpg"
     }
   ],
-  "addonsarray": [{
-      "name": "Класичний Комбо",
-      "weight": "---гр",
-      "recipe": "Класичний бургер + напій 0.33 + картопля фрі(100 гр.)",
-      "price": "79",
-      "promo": "true",
-      "img": "./img/Incl/D_Combo.jpg"
+  "addonsarray": [
+    {
+      "name": "Сосиски",
+      "weight": "0 гр",
+      "recipe": "Cосиски",
+      "price": "0",
+      "promo": "false",
+      "img": "./img/Incl/sa.jpg"
     },
     {
-      "name": "Чізбургер Комбо",
-      "weight": "---гр",
-      "recipe": "Чізбургер + напій 0.33 + картопля фрі (100 гр.)",
-      "price": "89",
-      "promo": "true",
-      "img": "./img/Incl/A_free.jpg"
+      "name": "Cмажена грудка",
+      "weight": "0 гр",
+      "recipe": "Cмажена грудка",
+      "price": "0",
+      "promo": "false",
+      "img": "./img/Incl/ia.jpg"
     },
     {
-      "name": "Український Комбо",
-      "weight": "---гр",
-      "recipe": "Український бургер + напій 0.33 + картопля фрі (100 гр.)",
-      "price": "129",
-      "promo": "true",
-      "img": "./img/Incl/A_grenki.jpg"
+      "name": "Cмажена картопля",
+      "weight": "0 гр",
+      "recipe": "Cмажена картопля",
+      "price": "0",
+      "promo": "false",
+      "img": "./img/Incl/pa.jpg"
+    },
+    {
+      "name": "Cмажена крильця",
+      "weight": "0 гр",
+      "recipe": "Картопля, жарена во фрітюре",
+      "price": "0",
+      "promo": "false",
+      "img": "./img/Incl/wa.jpg"
+    },
+    {
+      "name": "Суп з лосося",
+      "weight": "300 гр",
+      "recipe": "Мясо лосося, морква, картопля, цибуля, петрушка, спеції",
+      "price": "29",
+      "promo": "false",
+      "img": "./img/Incl/d1.jpg"
+    },
+    {
+      "name": "Картопля фрі",
+      "weight": "100 гр",
+      "recipe": "Картопля, жарена во фрітюре",
+      "price": "29",
+      "promo": "false",
+      "img": "./img/Incl/d2.jpg"
     }
   ]
 }

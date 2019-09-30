@@ -4,6 +4,9 @@ var totalItem = [];
 var debugItem = totalItem[0];
 var totalPrice = [];
 var globalPosition = [];
+var selfvinos = true;
+var ispricemod = false;
+var reducer = 0;
 // End Globals required for chart
 // Sw on poppovers
 $(function() {
@@ -15,24 +18,53 @@ $(document).ready(function() {
 });
 //Sw on MagPopup
 $(document).ready(function() {
-  $('.popup-link').magnificPopup({type:'image'});
+  $('.popup-link').magnificPopup({
+    type: 'image'
+  });
 });
+$('.custom-control-label').prop('indeterminate', true);
 // $('#fullHeightModalRight').data('bs.modal').handleUpdate()
 // Hide chat window \ activate
 $(function() {
-  $("#anitachat").hide();
+
+  $("#customRadioInline1").click(function() {
+    console.log(totalPrice.length);
+    $(".collapse").collapse('hide');
+    selfvinos = true;
+    if (ispricemod) {
+      if (totalPrice[0] > 0) {
+        reducer = (accumulator, currentValue) => accumulator + currentValue;
+        totalPrice[0] = totalPrice[0] - 50;
+        $("#totalvalue").text(totalPrice.reduce(reducer));
+        ispricemod = false;
+      }
+    }
+  });
+  $("#customRadioInline2").click(function() {
+    $(".collapse").collapse('show');
+    selfvinos = false;
+    if (totalPrice[0] > 0) {
+      reducer = (accumulator, currentValue) => accumulator + currentValue;
+      totalPrice[0] = totalPrice[0] + 50;
+      $("#totalvalue").text(totalPrice.reduce(reducer));
+      ispricemod = true;
+    }
+  });
+  //anitachat section ---------------------------
+  // $("#anitachat").hide();
+  // // $("#alive").show();
+  // $("#anitaclose").click(function() {
+  // if($('#anita-exist')){
+  //   $('#anita-exist').remove();
+  // }
+  // $("#anitachat").hide();
   // $("#alive").show();
-  $("#anitaclose").click(function() {
-  if($('#anita-exist')){
-    $('#anita-exist').remove();
-  }
-  $("#anitachat").hide();
-  $("#alive").show();
-  });
-  $("#alive").click(function() {
-      $('#anitachat').append(`<iframe id="anita-exist" src="https://getchat.me/pandabc.com.ua" class="anita-chat"></iframe>`);
-      $("#anitachat").show();
-  });
+  // });
+  // $("#alive").click(function() {
+  //     $('#anitachat').append(`<iframe id="anita-exist" src="https://getchat.me/pandabc.com.ua" class="anita-chat"></iframe>`);
+  //     $("#anitachat").show();
+  // });
+  //anitachat section ---------------------------
   // Load resources from productdb.json
   var x = 0;
   $.getJSON("json/productdb.json", function(data) {
@@ -44,14 +76,14 @@ $(function() {
     function sectionsItems(el, i, colorClass) {
       var items = [];
       $.each(el, function(key, val) {
-        console.log(key);
+        // console.log(key);
         // element.key = key;
         // element.items = items;
-        items.push('<div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 item">');   // 	col-sm-1 col-md-1 	col-lg-4 col-xl-4
+        items.push('<div class="col-sm-12 col-md-12 col-lg-4 col-xl-4 item ">'); // 	col-sm-1 col-md-1 	col-lg-4 col-xl-4
         items.push('<h3>' + val.name + '</h3>');
         items.push('<div class="col">');
-        items.push('<a class="popup-link" href="' + val.img+'.BIG.jpg">');
-        items.push('<img class="' + colorClass + '" src="' + val.img+' " alt="' + val.name + '" /></a>');
+        items.push('<a class="popup-link" href="' + val.img + '.BIG.jpg">');
+        items.push('<img class="' + colorClass + '" src="' + val.img + ' " alt="' + val.name + '" /></a>');
         items.push('</div><div class="">');
 
         if (val.promo == "true") {
@@ -60,7 +92,7 @@ $(function() {
           items.push('<span class="spinner-grow spinner-grow-sm text-white float-right"></span>');
         }
         items.push('<p>' + val.price + 'грн</p>');
-        items.push('<p class="font-weight-light">' + val.recipe + '</p>');
+        items.push('<p class="font-weight-light">' + val.weight + " - " + val.recipe + '</p>');
         items.push('<div class="input-group">');
         items.push('<input type="number" class="form-control" placeholder="0" required>');
         items.push('<div class="input-group-append">');
@@ -69,7 +101,7 @@ $(function() {
         items.push('</div></div></div></div>');
         //items{element: element}
         items.join("");
-        console.log(val.name);
+        // console.log(val.name);
         // Init add to chart function
         //Click on green BUTTON on Chart!
 
@@ -90,7 +122,7 @@ $(function() {
       $(".add-chart" + i).click(function() {
         //Title
         x++;
-        console.log(x + "-----------------------");
+        // console.log(x + "-----------------------");
         var product = this.parentNode.parentNode.parentNode.parentNode;
         var pname = product.firstElementChild.innerText;
         //Image
@@ -127,7 +159,7 @@ function addToChart(itemObject) {
   // itemObject.appendTo("#chartitems");
   $("#listchart").html("<p>" + itemObject + "</p>");
   $("#chartitems").text(itemObject.length);
-  $("#totalvalue").text(totalPrice.reduce(reducer) + "грн");
+  $("#totalvalue").text(totalPrice.reduce(reducer));
 }
 
 $("#end").hide();
@@ -145,14 +177,13 @@ $("#end").click(function() {
   let telephone = $("#calltel").val();
   let security = $("#security").val();
   var notcall = "empty";
-  if($("#notcall").attr("checked") != 'checked'){
+  notcall = "Будь ласка не дзвонить мені";
+  if ($("#notcall").attr("checked") != 'checked') {
     notcall = "Передзвоніть мені будьласка";
-  }else{
-    notcall = "Будь ласка не дзвонить мені";
   }
   let inputAddress = $("#inputAddress").val();
   let inputCity = $("#inputCity").val();
-  let inputState = $("#inputState option:selected" ).text();
+  let inputState = $("#inputState option:selected").text();
   if ([] === typeof(globalPosition)) {
     globalPosition.push("false");
     globalPosition = globalPosition.toString();
@@ -168,10 +199,11 @@ $("#end").click(function() {
       telephone: telephone,
       security: security,
       ugeo: globalPosition,
-      notcall:notcall,
-      input_address:inputAddress,
-      input_city:inputCity,
-      input_state:inputState
+      notcall: notcall,
+      input_address: inputAddress,
+      input_city: inputCity,
+      input_state: inputState,
+      self_vinos: selfvinos
     });
   }
 });
@@ -189,9 +221,9 @@ function getLocation() {
       // for (const value of iter) {
       //   console.log(value); // expected output: "a" "b" "c"
       // }
-      $("#infopanel").append(`<div class="alert alert-success alert-dismissible first-plane stick-bottom">
-        <button type="button" class="close" data-dismiss="alert">&times;</button>
-        <strong>Геолокація</strong> визначена ` + globalPosition + `. Закрийте це повідомлення.</div>`);
+      // $("#infopanel").append(`<div class="alert alert-success alert-dismissible first-plane stick-bottom">
+      //   <button type="button" class="close" data-dismiss="alert">&times;</button>
+      //   <strong>Геолокація</strong> визначена ` + globalPosition + `. Закрийте це повідомлення.</div>`);
     });
   } else {
     $("#infopanel").append(`<div class="alert alert-danger alert-dismissible first-plane stick-bottom">
