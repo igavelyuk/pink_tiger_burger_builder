@@ -165,7 +165,11 @@ function addToChart(itemObject) {
 $("#end").hide();
 $("#calltel").keyup(function() {
   if (($("#calltel").val()).length > 5) {
-    $("#end").show();
+    reducer = (accumulator, currentValue) => accumulator + currentValue;
+    let x = totalPrice.reduce(reducer)
+      if(x>10){
+        $("#end").show();
+      }
   } else {
     $("#end").hide();
   }

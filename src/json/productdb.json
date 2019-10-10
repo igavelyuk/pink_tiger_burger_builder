@@ -68,43 +68,51 @@
   ],
   "addonsarray": [
     {
-      "name": "Сосиски",
-      "weight": "0 гр",
-      "recipe": "Cосиски",
-      "price": "0",
+      "name": "Мисливські ковбаски",
+      "weight": "250 гр",
+      "recipe": "Мисливські ковбаски 7 шт",
+      "price": "79",
       "promo": "false",
       "img": "./img/Incl/sa.jpg"
     },
     {
-      "name": "Cмажена грудка",
-      "weight": "0 гр",
-      "recipe": "Cмажена грудка",
-      "price": "0",
-      "promo": "false",
-      "img": "./img/Incl/ia.jpg"
-    },
-    {
-      "name": "Cмажена картопля",
-      "weight": "0 гр",
-      "recipe": "Cмажена картопля",
-      "price": "0",
-      "promo": "false",
-      "img": "./img/Incl/pa.jpg"
-    },
-    {
-      "name": "Cмажена крильця",
-      "weight": "0 гр",
-      "recipe": "Картопля, жарена во фрітюре",
-      "price": "0",
-      "promo": "false",
+      "name": "Крильця Баффало &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp;  &nbsp;",
+      "weight": "250 гр",
+      "recipe": "Крильця Баффало 6 шт",
+      "price": "49",
+      "promo": "true",
       "img": "./img/Incl/wa.jpg"
     },
     {
-      "name": "Суп з лосося",
+      "name": "Нагетс  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;",
+      "weight": "200 гр",
+      "recipe": "Курячі нагетси во фрітюре та паніровке",
+      "price": "49",
+      "promo": "true",
+      "img": "./img/Incl/ia.jpg"
+    },
+    {
+      "name": "Картопля Айдахо",
+      "weight": "150 гр",
+      "recipe": "Cмажена картопля",
+      "price": "49",
+      "promo": "true",
+      "img": "./img/Incl/pa.jpg"
+    },
+    {
+      "name": "Уха з Лосося",
       "weight": "300 гр",
       "recipe": "Мясо лосося, морква, картопля, цибуля, петрушка, спеції",
       "price": "29",
-      "promo": "false",
+      "promo": "true",
+      "img": "./img/Incl/d1.jpg"
+    },
+    {
+      "name": "Солянка",
+      "weight": "300 гр",
+      "recipe": "Мясний бульон, морква, картопля, цибуля, петрушка, спеції",
+      "price": "29",
+      "promo": "true",
       "img": "./img/Incl/d1.jpg"
     },
     {
