@@ -15,6 +15,7 @@ $(function() {
 //Sw on tooltips
 $(document).ready(function() {
   $('[data-toggle="tooltip"]').tooltip();
+  $('.carousel').carousel();
 });
 //Sw on MagPopup
 $(document).ready(function() {
@@ -68,10 +69,10 @@ $(function() {
   // Load resources from productdb.json
   var x = 0;
   $.getJSON("json/productdb.json", function(data) {
-    sectionsItems(data.burgersarray, 0, "rounded-border-image");
-    sectionsItems(data.saladsarray, 1, "rounded-border-image-red");
+    sectionsItems(data.sushisetsarray, 0, "rounded-border-image");
+    sectionsItems(data.sushisarray, 1, "rounded-border-image-red");
     sectionsItems(data.drinksarray, 2, "rounded-border-image-blue");
-    sectionsItems(data.addonsarray, 3, "rounded-border-image-orange");
+    // sectionsItems(data.addonsarray, 3, "rounded-border-image-orange");
 
     function sectionsItems(el, i, colorClass) {
       var items = [];
@@ -80,14 +81,14 @@ $(function() {
         // element.key = key;
         // element.items = items;
         items.push('<div class="col-sm-12 col-md-12 col-lg-4 col-xl-4 item ">'); // 	col-sm-1 col-md-1 	col-lg-4 col-xl-4
-        items.push('<h3>' + val.name + '</h3>');
+        items.push('<h5>' + val.name + '</h5>');
         items.push('<div class="col">');
         items.push('<a class="popup-link" href="' + val.img + '.BIG.jpg">');
         items.push('<img class="' + colorClass + '" src="' + val.img + ' " alt="' + val.name + '" /></a>');
         items.push('</div><div class="">');
 
         if (val.promo == "true") {
-          items.push('<span class="spinner-grow spinner-grow-sm text-success float-right"></span>');
+          items.push('<span class="spinner-grow spinner-grow-sm text-danger float-right"></span>');
         } else {
           items.push('<span class="spinner-grow spinner-grow-sm text-white float-right"></span>');
         }
@@ -97,7 +98,7 @@ $(function() {
         items.push('<input type="number" class="form-control" placeholder="0" required>');
         items.push('<div class="input-group-append">');
         items.push('<div class="invalid-feedback">Незозможно принять</div>');
-        items.push('<button class="btn btn-success btn-rounded add-chart' + i + '" type="submit"> <i class="fas fa-cart-arrow-down"></i> </button>');
+        items.push('<button class="btn alert-danger btn-rounded add-chart' + i + '" type="submit"> <i class="fas fa-cart-arrow-down"></i> </button>');
         items.push('</div></div></div></div>');
         //items{element: element}
         items.join("");
@@ -157,6 +158,10 @@ $(function() {
 function addToChart(itemObject) {
   var reducer = (accumulator, currentValue) => accumulator + currentValue;
   // itemObject.appendTo("#chartitems");
+  let bonus = totalPrice.reduce(reducer);
+  if(bonus>300){
+    totalItem.push("<br>" + 1 + "x" + 0 + " = " + 0 + "грн - рол ВПОДАРУНОК");
+  }
   $("#listchart").html("<p>" + itemObject + "</p>");
   $("#chartitems").text(itemObject.length);
   $("#totalvalue").text(totalPrice.reduce(reducer));
@@ -165,11 +170,11 @@ function addToChart(itemObject) {
 $("#end").hide();
 $("#calltel").keyup(function() {
   if (($("#calltel").val()).length > 5) {
-    reducer = (accumulator, currentValue) => accumulator + currentValue;
-    let x = totalPrice.reduce(reducer)
-      if(x>10){
-        $("#end").show();
-      }
+  reducer = (accumulator, currentValue) => accumulator + currentValue;
+  let x = totalPrice.reduce(reducer)
+    if(x>50){
+      $("#end").show();
+    }
   } else {
     $("#end").hide();
   }

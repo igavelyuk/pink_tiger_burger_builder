@@ -15,7 +15,7 @@ h4 {
   z-index: 9999; }
 
 .navbg-panda-color {
-  background-color: #61cd70;
+  background-color: #fe504f;
   left: 150px; }
   .navbg-panda-color a {
     left: 50%;
@@ -28,7 +28,7 @@ h4 {
   float: left;
   height: 150px;
   width: 150px;
-  background-color: #61cd70;
+  background-color: #fe504f;
   padding: 5px;
   border-bottom-right-radius: 50%;
   z-order: 99; }
@@ -53,7 +53,7 @@ h4 {
   float: left;
   height: 170px;
   width: 170px;
-  background-color: #61cd70;
+  background-color: #fe504f;
   padding: 5px;
   margin: 0px 20px 0px -10px;
   border-radius: 50%; }
@@ -100,7 +100,7 @@ h4 {
   background-size: cover; }
 
 .jumbo-bg0 {
-  margin-top: 70px;
+  margin-top: 5px;
   background-image: url("../img/A-burger-section.jpg"); }
 
 .jumbo-bg1 {
@@ -198,13 +198,13 @@ h4 {
     color: #ad6336; }
   .section404 p:last-child {
     font-size: 2em;
-    color: #61cd70; }
+    color: #fe504f; }
 
 .section-social {
   margin: auto;
   padding-top: 100px;
   text-align: center;
-  color: #61cd70; }
+  color: #fe504f; }
   .section-social img.spacer {
     height: 300px;
     width: 300px; }

@@ -35,7 +35,7 @@ errorOrder();
 }
 
 function send_mail($products, $total_price, $location, $telephone,$security,$ugeo,$notcall, $input_address,$input_city,$input_state,$selfvinos){
-  $to_email = "order@burgerpandabc.com.ua";
+  $to_email = "order@sushipandabc.com.ua";
   $now = new DateTime();
   $formatted = $now->format('Y-m-d H:i:s');    // MySQL datetime format
   $timestamp = $now->getTimestamp();           // Unix Timestamp -- Since PHP 5.3
@@ -50,11 +50,11 @@ function send_mail($products, $total_price, $location, $telephone,$security,$uge
   $headers  = 'MIME-Version: 1.0' . "\r\n";
   $headers .= 'Content-type: text/html; charset=UTF-8' . "\r\n";
   // Create email headers
-      $headers .= "From: order@burgerpandabc.com.ua"."\r\n".
+      $headers .= "From: order@sushipandabc.com.ua"."\r\n".
       'Reply-To: '.$from."\r\n" .
       'X-Mailer: PHP/' . phpversion();
       // Compose a simple HTML email message
-      $body= '<html><body><meta http-equiv="Content-Type" content="text/html charset=UTF-8" /><table style="font-family:Arial,Helvetica,sans-serif;color:#333333;font-size:12px" width="100%" cellspacing="0" cellpadding="10" bgcolor="#e8e9ea">
+      $body= '<html><body><meta http-equiv="Content-Type" content="text/html charset=UTF-8" /><table style="font-family:Arial,Helvetica,sans-serif;color:#333333;font-size:12px" width="100%" cellspacing="0" cellpadding="10" bgcolor="#fe504f">
       <tbody>
       <tr>
       <td valign="top" align="center">
@@ -66,20 +66,20 @@ function send_mail($products, $total_price, $location, $telephone,$security,$uge
       <tbody>
       <tr>
       <td style="padding:5px 10px" width="40%" valign="middle" align="left">
-      <a href="pandabc.site" style="text-decoration:none; border-radius:75px;" target="_blank" data-saferedirecturl="https://www.burgerpandabc.com.ua/">
+      <a href="pandabc.site" style="text-decoration:none; border-radius:75px;" target="_blank" data-saferedirecturl="https://www.sushipandabc.com.ua/">
       <div>
-      <div style="height:150px;width:150px; background:#05c820; color:white; border-radius:75px;">
+      <div style="height:150px;width:150px; background:#fe504f; color:white; border-radius:75px;">
       <div style="height:65px;">
       </div>
       <div style="width:100%; text-align:center;background:white;font-family:Arial; color:black;">
-      Burger Panda
+      Суши Панда
       </div>
       </div>
       </div>
       </a>
       </td>
       <td style="padding:5px 10px" width="60%" valign="middle" align="right">
-      <h1 style="font-size:20px;color:#3b6e93;margin-top:0px;font-weight:normal">Бургер Панда Біла Церква</h1>
+      <h1 style="font-size:20px;color:#fe504f;margin-top:0px;font-weight:normal">Cуши Панда Біла Церква</h1>
       <div style="color:#666;font-size:11px">Автоматизований сервіс доставки їжі</div>
       </td>
       </tr>
@@ -94,16 +94,16 @@ function send_mail($products, $total_price, $location, $telephone,$security,$uge
       }else{
         $body.= '<div style="padding:5px;margin:10px;text-align:right;font-size:1.5em"> Адреса '.$input_address.' - '.$input_city.' - '.$input_state.'</div><hr>';
       }
-      $body.= '<div style="padding:5px;margin:10px;text-align:right;font-size:1.5em"> Телефон заказчика: +38 '.$telephone." ".$notcall.'</div><hr>';
+      $body.= '<div style="padding:5px;margin:10px;text-align:right;font-size:1.5em"> Телефон заказчика: '.$telephone." ".$notcall.'</div><hr>';
       $body.= '<div style="padding:5px;margin:10px;text-align:center;">'.$addition.' .</div><hr>';
       $body.= '<div style="padding:5px;margin:10px;text-align:center;color:green;">Місцезнаходження, оределенно як: '.$location.'</div><hr>';
       //main part
       $body.= '<hr style="border:0;color:#ccc;background-color:#ccc;height:1px;width:100%;text-align:left">
       <div style="color:#666;font-size:11px;padding:20px 10px 10px">
-      З повагою, служба доставки їжі "Бургер Панда".<br>
+      З повагою, служба доставки їжі "Суші Панда".<br>
       Даний лист сформовано автоматично, прохання не відповідати на нього по електронній пошті.<br>
       горяча ліния: Kiyvstar (096)41-41-096 и Life Cell (063)41-41-096 <br>
-      Також якщо відбулися технічні проблеми напишіть лист <a href="mailto:support@burgerpandabc.com.ua" target="_blank" data-saferedirecturl="burgerpandabc.com.ua">support@burgerpandabc.com.ua</a><br>
+      Також якщо відбулися технічні проблеми напишіть лист <a href="mailto:support@sushipandabc.com.ua" target="_blank" data-saferedirecturl="sushipandabc.com.ua">support@sushipandabc.com.ua</a><br>
       </div>
       </td>
       </tr>
@@ -111,7 +111,7 @@ function send_mail($products, $total_price, $location, $telephone,$security,$uge
       </table>
       <div style="text-align:center;color:#666;font-size:11px;padding:20px 50px 10px 50px">
       Copyright © 2006—2019
-      <a href="burgerpandabc.com.ua" target="_blank" data-saferedirecturl="burgerpandabc.com.ua">
+      <a href="sushipandabc.com.ua" target="_blank" data-saferedirecturl="sushipandabc.com.ua">
       "Бургер Панда"</a>
       </div>
       </td>
@@ -119,7 +119,7 @@ function send_mail($products, $total_price, $location, $telephone,$security,$uge
       </tbody>
       </table></body></html>';
       if ( mail($to_email, $subject, $body, $headers)) {
-        readfile("https://www.burgerpandabc.com.ua/contact/200.html");
+        readfile("https://www.sushipandabc.com.ua/contact/200.html");
       } else {
         errorOrder();
       }
@@ -183,8 +183,8 @@ function viberMessage($products, $total_price,$location_message,$telephone,$secu
    "receiver": "i084psqf2Ugc7pSBudoddA==",
    "min_api_version":1,
    "sender":{
-      "name":"burgerPanda",
-      "avatar":"https://burgerpandabc.com.ua/img/logo.png"
+      "name":"sushiPanda",
+      "avatar":"https://sushipandabc.com.ua/img/logo.png"
    },
    "broadcast_list":[
       "i084psqf2Ugc7pSBudoddA==",
@@ -211,8 +211,8 @@ function viberMessage($products, $total_price,$location_message,$telephone,$secu
    "receiver": "i084psqf2Ugc7pSBudoddA==",
    "min_api_version":1,
    "sender":{
-      "name":"burgerPanda-povar",
-      "avatar":"https://burgerpandabc.com.ua/img/logo.png"
+      "name":"sushiPanda-povar",
+      "avatar":"https://sushipandabc.com.ua/img/logo3.png"
    },
    "broadcast_list":[
       "i084psqf2Ugc7pSBudoddA==",
@@ -236,7 +236,7 @@ function viberMessage($products, $total_price,$location_message,$telephone,$secu
   // return $result;
 }
 function errorOrder(){
-    readfile("https://www.burgerpandabc.com.ua/contact/404.html");
+    readfile("https://www.sushipandabc.com.ua/contact/404.html");
 }
 
 ?>
