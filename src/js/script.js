@@ -73,14 +73,14 @@ $(function() {
   //   sectionsItems(data.drinksarray, 2, "rounded-border-image-blue");
   //   sectionsItems(data.addonsarray, 3, "rounded-border-image-orange");
   var firebaseConfig = {
-      apiKey: "AIzaSyCaQVHiYLRnrgKaHiG4wGsw49tWYyI06tE",
-      authDomain: "burgerpandabc.firebaseapp.com",
-      databaseURL: "https://burgerpandabc.firebaseio.com",
-      projectId: "burgerpandabc",
-      storageBucket: "burgerpandabc.appspot.com",
-      messagingSenderId: "1073997297577",
-      appId: "1:1073997297577:web:649cad15a2b496a5d276b8",
-      measurementId: "G-TXK31HHRV1"
+      apiKey: "",
+      authDomain: "",
+      databaseURL: "",
+      projectId: "",
+      storageBucket: "",
+      messagingSenderId: "",
+      appId: "",
+      measurementId: ""
     };
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);

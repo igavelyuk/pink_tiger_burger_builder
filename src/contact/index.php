@@ -148,7 +148,7 @@ function get_ip(){
       return $ipaddress;
   }
   $ip = get_client_ip_env();
-  $access_key = '5a9d245a0d7a8992f1dd9e953c4cd7d5';
+  $access_key = '';
 
   // Initialize CURL:
   $ch = curl_init('http://api.ipstack.com/'.$ip.'?access_key='.$access_key.'');
@@ -179,16 +179,16 @@ function viberMessage($products, $total_price,$location_message,$telephone,$secu
   // =str_replace("&nbsp;", "", $nproducts);
   $url = "https://chatapi.viber.com/pa/broadcast_message";
   $ch = curl_init($url);
-  $data = '{"auth_token":"4a3512151fe7d0b7-ce915ef61ce4f48c-adbe331e08891d54",
-   "receiver": "i084psqf2Ugc7pSBudoddA==",
+  $data = '{"auth_token":"",
+   "receiver": "",
    "min_api_version":1,
    "sender":{
       "name":"burgerPanda",
       "avatar":"https://burgerpandabc.com.ua/img/logo.png"
    },
    "broadcast_list":[
-      "i084psqf2Ugc7pSBudoddA==",
-      "r022tkjztFMRioF+X+UB7Q=="
+      "",
+      ""
    ],
    "tracking_data":"tracking data",
    "type":"text",';
@@ -207,16 +207,16 @@ function viberMessage($products, $total_price,$location_message,$telephone,$secu
   curl_exec($ch);
 
   //new MessageFormatter
-  $data = '{"auth_token":"4a3512151fe7d0b7-ce915ef61ce4f48c-adbe331e08891d54",
-   "receiver": "i084psqf2Ugc7pSBudoddA==",
+  $data = '{"auth_token":"",
+   "receiver": "",
    "min_api_version":1,
    "sender":{
       "name":"burgerPanda-povar",
       "avatar":"https://burgerpandabc.com.ua/img/logo.png"
    },
    "broadcast_list":[
-      "i084psqf2Ugc7pSBudoddA==",
-      "r022tkjztFMRioF+X+UB7Q=="
+      "",
+      ""
    ],
    "tracking_data":"tracking data",
    "type":"text",';
