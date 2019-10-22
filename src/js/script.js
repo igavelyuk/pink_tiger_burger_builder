@@ -67,11 +67,34 @@ $(function() {
   //anitachat section ---------------------------
   // Load resources from productdb.json
   var x = 0;
-  $.getJSON("json/productdb.json", function(data) {
-    sectionsItems(data.burgersarray, 0, "rounded-border-image");
-    sectionsItems(data.saladsarray, 1, "rounded-border-image-red");
-    sectionsItems(data.drinksarray, 2, "rounded-border-image-blue");
-    sectionsItems(data.addonsarray, 3, "rounded-border-image-orange");
+  // $.getJSON("json/productdb.json", function(data) {
+  //   sectionsItems(data.burgersarray, 0, "rounded-border-image");
+  //   sectionsItems(data.saladsarray, 1, "rounded-border-image-red");
+  //   sectionsItems(data.drinksarray, 2, "rounded-border-image-blue");
+  //   sectionsItems(data.addonsarray, 3, "rounded-border-image-orange");
+  var firebaseConfig = {
+      apiKey: "AIzaSyCaQVHiYLRnrgKaHiG4wGsw49tWYyI06tE",
+      authDomain: "burgerpandabc.firebaseapp.com",
+      databaseURL: "https://burgerpandabc.firebaseio.com",
+      projectId: "burgerpandabc",
+      storageBucket: "burgerpandabc.appspot.com",
+      messagingSenderId: "1073997297577",
+      appId: "1:1073997297577:web:649cad15a2b496a5d276b8",
+      measurementId: "G-TXK31HHRV1"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+    var database = firebase.database();
+    var dbRef = database.ref();
+
+    dbRef.on('value',function(datax){
+      var data = datax.val();
+      console.log(data);
+        sectionsItems(data.burgersarray, 1, "rounded-border-image");
+        sectionsItems(data.saladsarray, 3, "rounded-border-image-red");
+        sectionsItems(data.drinksarray, 2, "rounded-border-image-blue");
+        sectionsItems(data.addonsarray, 0, "rounded-border-image-orange");
 
     function sectionsItems(el, i, colorClass) {
       var items = [];
@@ -82,7 +105,7 @@ $(function() {
         items.push('<div class="col-sm-12 col-md-12 col-lg-4 col-xl-4 item ">'); // 	col-sm-1 col-md-1 	col-lg-4 col-xl-4
         items.push('<h3>' + val.name + '</h3>');
         items.push('<div class="col">');
-        items.push('<a class="popup-link" href="' + val.img + '.BIG.jpg">');
+        items.push('<a class="popup-link" href="' + val.imgBIG + '">');
         items.push('<img class="' + colorClass + '" src="' + val.img + ' " alt="' + val.name + '" /></a>');
         items.push('</div><div class="">');
 

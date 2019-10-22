@@ -1,6 +1,0 @@
-./img/Small_Burgers/A_Cheese_Beacon.jpg
-./img/Small_Burgers/A_Cotlet_Cucumber.jpg
-./img/Small_Burgers/A_Cotlet_Mayonese.jpg
-./img/Small_Burgers/A_Cotlet_Cheese_Cucumber.jpg
-./img/Small_Burgers/A_Cotlet_Saussage.jpg
-./img/Small_Burgers/A_Salami.jpg
