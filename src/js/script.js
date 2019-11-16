@@ -7,7 +7,9 @@ var globalPosition = [];
 var selfvinos = true;
 var ispricemod = false;
 var reducer = 0;
+var selfDeliverActive = false;
 // End Globals required for chart
+//-------------------------------------------------
 // Sw on poppovers
 $(function() {
   $('[data-toggle="popover"]').popover()
@@ -28,7 +30,6 @@ $('.custom-control-label').prop('indeterminate', true);
 $(function() {
 
   $("#customRadioInline1").click(function() {
-    console.log(totalPrice.length);
     $(".collapse").collapse('hide');
     selfvinos = true;
     if (ispricemod) {
@@ -37,6 +38,7 @@ $(function() {
         totalPrice[0] = totalPrice[0] - 50;
         $("#totalvalue").text(totalPrice.reduce(reducer));
         ispricemod = false;
+        selfDeliverActive = false;
       }
     }
   });
@@ -44,8 +46,11 @@ $(function() {
     $(".collapse").collapse('show');
     selfvinos = false;
     if (totalPrice[0] > 0) {
-      reducer = (accumulator, currentValue) => accumulator + currentValue;
-      totalPrice[0] = totalPrice[0] + 50;
+      if(!selfDeliverActive){
+        reducer = (accumulator, currentValue) => accumulator + currentValue;
+        totalPrice[0] = totalPrice[0] + 50;
+      }
+      selfDeliverActive = true;
       $("#totalvalue").text(totalPrice.reduce(reducer));
       ispricemod = true;
     }
@@ -66,36 +71,41 @@ $(function() {
   // });
   //anitachat section ---------------------------
   // Load resources from productdb.json
+
   var x = 0;
   // $.getJSON("json/productdb.json", function(data) {
   //   sectionsItems(data.burgersarray, 0, "rounded-border-image");
   //   sectionsItems(data.saladsarray, 1, "rounded-border-image-red");
   //   sectionsItems(data.drinksarray, 2, "rounded-border-image-blue");
   //   sectionsItems(data.addonsarray, 3, "rounded-border-image-orange");
+  //-------------------------------------------------
   var firebaseConfig = {
-      apiKey: "",
-      authDomain: "",
-      databaseURL: "",
-      projectId: "",
-      storageBucket: "",
-      messagingSenderId: "",
-      appId: "",
-      measurementId: ""
-    };
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
-    firebase.analytics();
-    var database = firebase.database();
-    var dbRef = database.ref();
+    apiKey: "",
+    authDomain: "",
+    databaseURL: "",
+    projectId: "",
+    storageBucket: "",
+    messagingSenderId: "",
+    appId: "",
+    measurementId: ""
+  };
 
-    dbRef.on('value',function(datax){
-      var data = datax.val();
-      console.log(data);
-        sectionsItems(data.burgersarray, 1, "rounded-border-image");
-        sectionsItems(data.saladsarray, 3, "rounded-border-image-red");
-        sectionsItems(data.drinksarray, 2, "rounded-border-image-blue");
-        sectionsItems(data.addonsarray, 0, "rounded-border-image-orange");
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+  var database = firebase.database();
+  var dbRef = database.ref();
 
+  dbRef.on('value',function(datax){
+    var data = datax.val();
+    // console.log(data);
+      sectionsItems(data.burgersarray, 1, "rounded-border-image");
+      sectionsItems(data.saladsarray, 3, "rounded-border-image-red");
+      sectionsItems(data.drinksarray, 2, "rounded-border-image-blue");
+      sectionsItems(data.addonsarray, 0, "rounded-border-image-orange");
+
+  // });
+  //------------------------------------------------
     function sectionsItems(el, i, colorClass) {
       var items = [];
       $.each(el, function(key, val) {
@@ -174,7 +184,7 @@ $(function() {
       //inside function
       //console.log(Object.keys(element)[0]);
     }
-  });
+});
 });
 
 function addToChart(itemObject) {
